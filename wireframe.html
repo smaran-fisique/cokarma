@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoKarma Homepage — Wireframe</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f0f0;color:#333;}
+
+.page{background:#fff;max-width:1200px;margin:32px auto;border:1px solid #ccc;box-shadow:0 2px 16px rgba(0,0,0,0.08);}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:2px solid #e0e0e0;background:#fff;}
+.wf-logo{font-size:16px;font-weight:800;color:#555;letter-spacing:-0.5px;}
+.wf-nav-links{display:flex;gap:28px;font-size:12px;color:#777;font-weight:500;}
+.wf-nav-right{display:flex;gap:10px;}
+.wf-btn-ghost{padding:7px 18px;border:1.5px solid #bbb;border-radius:4px;background:#fff;font-size:11px;color:#777;font-weight:600;}
+.wf-btn-solid{padding:7px 18px;border:none;border-radius:4px;background:#bbb;font-size:11px;color:#fff;font-weight:600;}
+
+/* HERO */
+.hero{min-height:85vh;padding:80px 40px;background:#f7f7f7;border-bottom:2px solid #e0e0e0;display:flex;align-items:center;position:relative;}
+.hero-content{max-width:600px;}
+.wf-badge{display:inline-flex;align-items:center;gap:8px;border:1.5px solid #ddd;border-radius:20px;padding:6px 16px;margin-bottom:28px;background:#fff;}
+.wf-badge-dot{width:8px;height:8px;border-radius:50%;background:#bbb;flex-shrink:0;}
+.wf-badge span{font-size:11px;font-weight:600;color:#777;}
+.wf-h1{font-size:56px;font-weight:800;color:#333;line-height:1.05;letter-spacing:-2px;margin-bottom:22px;}
+.wf-h1 em{color:#888;font-style:normal;}
+.wf-body-text{font-size:15px;color:#777;line-height:1.75;margin-bottom:36px;max-width:500px;}
+.wf-ctas{display:flex;align-items:center;gap:20px;}
+.wf-btn-primary{padding:14px 32px;background:#bbb;border-radius:6px;font-size:14px;font-weight:700;color:#fff;border:none;}
+.wf-btn-text{font-size:13px;color:#888;font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+.hero-img-placeholder{position:absolute;right:40px;top:50%;transform:translateY(-50%);width:340px;height:300px;background:#e8e8e8;border:2px dashed #ccc;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:11px;font-weight:600;letter-spacing:0.5px;}
+
+/* SECTIONS */
+.sec{padding:80px 40px;border-bottom:2px solid #e0e0e0;}
+.sec-alt{padding:80px 40px;border-bottom:2px solid #e0e0e0;background:#f9f9f9;}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:12px;}
+.sec-h{font-size:32px;font-weight:800;color:#333;letter-spacing:-1px;margin-bottom:12px;line-height:1.15;}
+.sec-sub{font-size:13px;color:#888;margin-bottom:36px;line-height:1.65;}
+
+/* SECTION LABELS */
+.section-tag{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#bbb;margin-bottom:24px;display:flex;align-items:center;gap:8px;}
+.section-tag::after{content:'';flex:1;height:1px;background:#e8e8e8;}
+
+/* WORKSPACE CARDS */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.wf-card{border:1.5px solid #e0e0e0;border-radius:10px;overflow:hidden;background:#fff;}
+.wf-card-img{height:200px;background:#ececec;border-bottom:1.5px solid #e0e0e0;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;padding:12px;}
+.wf-card-img-label{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#aaa;}
+.wf-card-body{padding:16px;}
+.wf-card-title{font-size:13px;font-weight:700;color:#444;margin-bottom:5px;}
+.wf-card-sub{font-size:11px;color:#aaa;margin-bottom:14px;}
+.wf-card-cta{font-size:11px;font-weight:700;color:#888;}
+
+/* WHY — 2 COL */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+.wf-media-block{height:360px;background:#ececec;border-radius:10px;border:2px dashed #ddd;display:flex;align-items:flex-end;justify-content:flex-start;padding:20px;color:#aaa;font-size:10px;font-weight:700;letter-spacing:0.5px;}
+.wf-acc-item{border-bottom:1.5px solid #e8e8e8;padding:16px 0;cursor:pointer;}
+.wf-acc-item:first-child{border-top:1.5px solid #e8e8e8;}
+.wf-acc-row{display:flex;justify-content:space-between;align-items:center;}
+.wf-acc-label{font-size:13px;font-weight:600;color:#555;}
+.wf-acc-icon{font-size:18px;color:#ccc;line-height:1;}
+.wf-acc-body{font-size:12px;color:#999;margin-top:8px;line-height:1.7;}
+
+/* LOCATION GRID */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.wf-loc-card{border:1.5px solid #e0e0e0;border-radius:10px;overflow:hidden;background:#fff;}
+.wf-loc-img{height:200px;background:#ececec;border-bottom:1.5px solid #e0e0e0;}
+.wf-loc-more{height:200px;background:#f0f0f0;border-bottom:1.5px solid #e0e0e0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;}
+.wf-loc-more-n{font-size:28px;font-weight:800;color:#aaa;}
+.wf-loc-more-s{font-size:11px;color:#bbb;}
+.wf-loc-body{padding:12px 16px;}
+.wf-loc-name{font-size:12px;font-weight:700;color:#444;margin-bottom:4px;}
+.wf-loc-name-cta{font-size:12px;font-weight:700;color:#888;margin-bottom:4px;}
+.wf-loc-meta{font-size:10px;color:#aaa;}
+
+/* STATS BAR */
+.stats-bar{background:#333;padding:52px 40px;}
+.stats-inner{display:flex;justify-content:space-around;align-items:center;}
+.stat-item{text-align:center;}
+.stat-n{font-size:48px;font-weight:800;color:#fff;line-height:1;}
+.stat-l{font-size:11px;color:rgba(255,255,255,0.5);margin-top:8px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;}
+.stat-div{width:1px;height:64px;background:rgba(255,255,255,0.15);}
+
+/* LOGO MARQUEE */
+.trusted{padding:40px;border-bottom:2px solid #e0e0e0;overflow:hidden;}
+.trusted-lbl{font-size:10px;color:#bbb;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;font-weight:600;}
+.wf-logos{display:flex;gap:16px;overflow:hidden;}
+.wf-logo-item{min-width:120px;height:48px;background:#f4f4f4;border:1.5px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#aaa;flex-shrink:0;}
+.wf-note{font-size:10px;color:#bbb;font-style:italic;margin-top:14px;}
+
+/* NETWORK */
+.net-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:48px;}
+.net-num{font-size:72px;font-weight:800;color:#333;line-height:1;letter-spacing:-4px;margin-bottom:10px;}
+.net-sub{font-size:15px;color:#777;line-height:1.7;}
+.net-claim{font-size:14px;color:#888;line-height:1.8;}
+.grid-3-gap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.wf-tcard{background:#fff;border:1.5px solid #e0e0e0;border-radius:14px;padding:28px;}
+.wf-stars{color:#bbb;font-size:13px;letter-spacing:2px;margin-bottom:14px;}
+.wf-quote{font-size:12px;color:#666;line-height:1.85;margin-bottom:20px;font-style:italic;}
+.wf-tcard-foot{display:flex;align-items:center;gap:12px;border-top:1.5px solid #f0f0f0;padding-top:16px;}
+.wf-avatar{width:36px;height:36px;border-radius:50%;background:#e0e0e0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#aaa;flex-shrink:0;}
+.wf-name{font-size:12px;font-weight:700;color:#444;}
+.wf-meta{font-size:10px;color:#aaa;margin-top:3px;}
+
+/* EVENT STRIP */
+.wf-evt{margin-top:40px;background:#222;border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;}
+.wf-evt-left{display:flex;align-items:center;gap:16px;}
+.wf-evt-badge{padding:5px 11px;background:#555;border-radius:4px;font-size:9px;font-weight:700;color:#ccc;letter-spacing:1px;text-transform:uppercase;}
+.wf-evt-title{font-size:17px;font-weight:700;color:#ddd;margin-bottom:5px;}
+.wf-evt-date{font-size:11px;color:#777;}
+.wf-evt-cta{padding:13px 26px;background:#555;border-radius:7px;font-size:13px;font-weight:700;color:#ccc;}
+
+/* BLOG */
+.wf-blog-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+.wf-blog-more{font-size:12px;font-weight:700;color:#aaa;}
+.wf-blog-card{border:1.5px solid #e0e0e0;border-radius:14px;overflow:hidden;background:#fff;}
+.wf-blog-img{height:180px;background:#ececec;border-bottom:1.5px solid #e0e0e0;padding:14px;position:relative;}
+.wf-blog-tag{display:inline-block;padding:4px 10px;background:#ddd;border-radius:4px;font-size:9px;font-weight:700;color:#888;letter-spacing:0.5px;}
+.wf-blog-body{padding:20px;}
+.wf-blog-title{font-size:13px;font-weight:700;color:#444;line-height:1.55;margin-bottom:9px;}
+.wf-blog-meta{font-size:10px;color:#bbb;}
+
+/* CONTACT */
+.grid-2-stretch{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:stretch;}
+.wf-contact-panel{min-height:420px;background:#222;border-radius:14px;padding:36px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;}
+.wf-contact-h{font-size:32px;font-weight:800;color:#ddd;line-height:1.2;letter-spacing:-0.8px;}
+.wf-contact-s{font-size:12px;color:#777;margin-top:4px;}
+.wf-contact-ph{display:inline-flex;align-items:center;background:#444;border-radius:6px;padding:10px 18px;font-size:13px;font-weight:600;color:#ccc;margin-top:12px;width:fit-content;}
+.wf-form-wrap{display:flex;flex-direction:column;justify-content:center;gap:12px;}
+.wf-toggle{display:flex;border:1.5px solid #e0e0e0;border-radius:8px;overflow:hidden;margin-bottom:6px;}
+.wf-tog{flex:1;padding:12px;font-size:12px;font-weight:600;text-align:center;color:#aaa;background:#fff;border:none;}
+.wf-tog.on{background:#eee;color:#666;}
+.wf-frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.wf-input{height:44px;background:#f7f7f7;border:1.5px solid #e0e0e0;border-radius:7px;width:100%;padding:0 14px;font-size:12px;color:#aaa;}
+.wf-submit{width:100%;height:48px;background:#bbb;border:none;border-radius:7px;font-size:14px;font-weight:700;color:#fff;}
+.wf-hint{font-size:11px;color:#bbb;margin-top:2px;}
+
+/* FOOTER */
+.footer{padding:28px 40px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid #e0e0e0;}
+.wf-foot-logo{font-size:15px;font-weight:800;color:#777;}
+.wf-foot-links{display:flex;gap:20px;font-size:11px;color:#aaa;font-weight:500;}
+.wf-foot-copy{font-size:10px;color:#ccc;}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wf-logo">CoKarma</div>
+    <div class="wf-nav-links">
+      <span>Locations</span><span>Workspaces</span><span>Enterprise</span><span>Events</span><span>About</span>
+    </div>
+    <div class="wf-nav-right">
+      <div class="wf-btn-ghost">Log in</div>
+      <div class="wf-btn-solid">Book a tour</div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="section-tag">HERO</div>
+      <div class="wf-badge">
+        <div class="wf-badge-dot"></div>
+        <span>13 locations across Hyderabad</span>
+      </div>
+      <div class="wf-h1">Work where<br><em>Hyderabad</em> works.</div>
+      <div class="wf-body-text">From day passes to 2,000-seat managed offices &mdash; one community, built for the city's most ambitious teams.</div>
+      <div class="wf-ctas">
+        <div class="wf-btn-primary">Find your space</div>
+        <div class="wf-btn-text">Need 20+ seats? Talk to our team &rarr;</div>
+      </div>
+    </div>
+    <div class="hero-img-placeholder">IMAGE / VISUAL</div>
+  </div>
+
+  <!-- WORKSPACE TYPES -->
+  <div class="sec">
+    <div class="section-tag">WORKSPACE TYPES — 4 CARDS</div>
+    <div class="eyebrow">What are you looking for</div>
+    <div class="sec-h">A workspace built for you</div>
+    <div class="sec-sub">Move-in ready or fully customised &mdash; the right setup for every team size.</div>
+    <div class="grid-4">
+      <div class="wf-card">
+        <div class="wf-card-img"><div class="wf-card-img-label">Private office</div></div>
+        <div class="wf-card-body">
+          <div class="wf-card-title">Private office</div>
+          <div class="wf-card-sub">2&ndash;200 people &middot; Move-in ready</div>
+          <div class="wf-card-cta">Explore &rarr;</div>
+        </div>
+      </div>
+      <div class="wf-card">
+        <div class="wf-card-img"><div class="wf-card-img-label">Managed office</div></div>
+        <div class="wf-card-body">
+          <div class="wf-card-title">Managed office</div>
+          <div class="wf-card-sub">20&ndash;2,000 people &middot; Customised</div>
+          <div class="wf-card-cta">Explore &rarr;</div>
+        </div>
+      </div>
+      <div class="wf-card">
+        <div class="wf-card-img"><div class="wf-card-img-label">Dedicated desk</div></div>
+        <div class="wf-card-body">
+          <div class="wf-card-title">Dedicated desk</div>
+          <div class="wf-card-sub">1&ndash;10 people &middot; Monthly</div>
+          <div class="wf-card-cta">Explore &rarr;</div>
+        </div>
+      </div>
+      <div class="wf-card">
+        <div class="wf-card-img"><div class="wf-card-img-label">Day pass</div></div>
+        <div class="wf-card-body">
+          <div class="wf-card-title">Day pass</div>
+          <div class="wf-card-sub">On-demand &middot; Pay per use</div>
+          <div class="wf-card-cta">Explore &rarr;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <div class="sec-alt">
+    <div class="section-tag">WHY COKARMA — MEDIA + ACCORDION</div>
+    <div class="grid-2">
+      <div class="wf-media-block">Kokapet &middot; Financial District &middot; HITEC City</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">Why CoKarma</div>
+        <div class="sec-h" style="margin-bottom:24px;">Built different.</div>
+        <div class="wf-acc-item">
+          <div class="wf-acc-row"><div class="wf-acc-label">24/7 access, 365 days a year</div><div class="wf-acc-icon">+</div></div>
+          <div class="wf-acc-body">Monthly members get round-the-clock access. No early closures, no holiday lockouts &mdash; ever.</div>
+        </div>
+        <div class="wf-acc-item">
+          <div class="wf-acc-row"><div class="wf-acc-label">Metro-connected locations</div><div class="wf-acc-icon">+</div></div>
+        </div>
+        <div class="wf-acc-item">
+          <div class="wf-acc-row"><div class="wf-acc-label">Scale from 2 to 2,000 seats</div><div class="wf-acc-icon">+</div></div>
+        </div>
+        <div class="wf-acc-item">
+          <div class="wf-acc-row"><div class="wf-acc-label">Active event infrastructure</div><div class="wf-acc-icon">+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATIONS -->
+  <div class="sec">
+    <div class="section-tag">LOCATIONS — 3×2 GRID</div>
+    <div class="eyebrow">Our locations</div>
+    <div class="sec-h">We're in your neighbourhood</div>
+    <div class="sec-sub">13 centres across Hyderabad's key business corridors.</div>
+    <div class="grid-3">
+      <div class="wf-loc-card"><div class="wf-loc-img"></div><div class="wf-loc-body"><div class="wf-loc-name">Kokapet</div><div class="wf-loc-meta">535 seats &middot; New campus</div></div></div>
+      <div class="wf-loc-card"><div class="wf-loc-img"></div><div class="wf-loc-body"><div class="wf-loc-name">HITEC City</div><div class="wf-loc-meta">480 seats &middot; Tech hub</div></div></div>
+      <div class="wf-loc-card"><div class="wf-loc-img"></div><div class="wf-loc-body"><div class="wf-loc-name">Financial District</div><div class="wf-loc-meta">350 seats &middot; GCC belt</div></div></div>
+      <div class="wf-loc-card"><div class="wf-loc-img"></div><div class="wf-loc-body"><div class="wf-loc-name">Jubilee Hills</div><div class="wf-loc-meta">280 seats &middot; Central</div></div></div>
+      <div class="wf-loc-card"><div class="wf-loc-img"></div><div class="wf-loc-body"><div class="wf-loc-name">Kondapur</div><div class="wf-loc-meta">320 seats &middot; Metro access</div></div></div>
+      <div class="wf-loc-card">
+        <div class="wf-loc-more"><div class="wf-loc-more-n">+8</div><div class="wf-loc-more-s">more locations</div></div>
+        <div class="wf-loc-body"><div class="wf-loc-name-cta">See all 13 &rarr;</div><div class="wf-loc-meta">Begumpet, Madhapur &amp; more</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-n">13+</div><div class="stat-l">Locations</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><div class="stat-n">4,200+</div><div class="stat-l">Seats</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><div class="stat-n">700+</div><div class="stat-l">Companies</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><div class="stat-n">20,000+</div><div class="stat-l">Member network</div></div>
+    </div>
+  </div>
+
+  <!-- LOGO MARQUEE -->
+  <div class="trusted">
+    <div class="section-tag">TRUSTED BY — SCROLLING LOGO STRIP</div>
+    <div class="trusted-lbl">Trusted by 700+ companies</div>
+    <div class="wf-logos">
+      <div class="wf-logo-item">IndiGo</div>
+      <div class="wf-logo-item">upGrad</div>
+      <div class="wf-logo-item">Hyundai</div>
+      <div class="wf-logo-item">Zomato</div>
+      <div class="wf-logo-item">Freshworks</div>
+      <div class="wf-logo-item">Razorpay</div>
+      <div class="wf-logo-item">Myntra</div>
+      <div class="wf-logo-item">Swiggy</div>
+      <div class="wf-logo-item">PhonePe</div>
+    </div>
+    <div class="wf-note">Auto-scrolling marquee &middot; pauses on hover &middot; fade edges</div>
+  </div>
+
+  <!-- NETWORK + TESTIMONIALS -->
+  <div class="sec-alt">
+    <div class="section-tag">NETWORK &amp; TESTIMONIALS</div>
+    <div class="net-top">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">The CoKarma network</div>
+        <div class="net-num">20,000+</div>
+        <div class="net-sub">Your next hire, investor<br>or client is already here.</div>
+      </div>
+      <div class="net-claim">A community of founders, operators and enterprise teams &mdash; all working from the same 13 locations.</div>
+    </div>
+    <div class="grid-3-gap">
+      <div class="wf-tcard">
+        <div class="wf-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="wf-quote">"We moved from 4 desks to a 60-seat managed office in 8 months. CoKarma handled everything &mdash; space, ops, the transition."</div>
+        <div class="wf-tcard-foot">
+          <div class="wf-avatar">RK</div>
+          <div><div class="wf-name">Rahul K.</div><div class="wf-meta">Founder &middot; HITEC City &middot; 60 seats</div></div>
+        </div>
+      </div>
+      <div class="wf-tcard">
+        <div class="wf-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="wf-quote">"We hired two engineers and landed a client partnership &mdash; both from introductions within the CoKarma network."</div>
+        <div class="wf-tcard-foot">
+          <div class="wf-avatar">PS</div>
+          <div><div class="wf-name">Priya S.</div><div class="wf-meta">Co-founder &middot; Kokapet &middot; 12 desks</div></div>
+        </div>
+      </div>
+      <div class="wf-tcard">
+        <div class="wf-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="wf-quote">"For our GCC setup in Hyderabad, CoKarma gave us 200 seats, legal address and full ops support from day one."</div>
+        <div class="wf-tcard-foot">
+          <div class="wf-avatar">AM</div>
+          <div><div class="wf-name">Arun M.</div><div class="wf-meta">VP Operations &middot; Fin. District &middot; 200 seats</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVENT STRIP -->
+    <div class="wf-evt">
+      <div class="wf-evt-left">
+        <div class="wf-evt-badge">Upcoming</div>
+        <div>
+          <div class="wf-evt-title">eChai &times; CoKarma &mdash; Startup Demo Day</div>
+          <div class="wf-evt-date">Apr 18, 2026 &middot; Kokapet</div>
+        </div>
+      </div>
+      <div class="wf-evt-cta">Register free &rarr;</div>
+    </div>
+  </div>
+
+  <!-- BLOG / RESOURCES -->
+  <div class="sec">
+    <div class="section-tag">RESOURCES — 3 CARDS</div>
+    <div class="wf-blog-hdr">
+      <div>
+        <div class="eyebrow" style="margin-bottom:10px;">Resources</div>
+        <div class="sec-h" style="margin-bottom:0;">From the CoKarma desk</div>
+      </div>
+      <div class="wf-blog-more">View all &rarr;</div>
+    </div>
+    <div class="grid-3">
+      <div class="wf-blog-card">
+        <div class="wf-blog-img"><div class="wf-blog-tag">GCC</div></div>
+        <div class="wf-blog-body">
+          <div class="wf-blog-title">Where MNCs are setting up new GCCs in Hyderabad</div>
+          <div class="wf-blog-meta">Feb 19, 2026 &middot; 4 min read</div>
+        </div>
+      </div>
+      <div class="wf-blog-card">
+        <div class="wf-blog-img"><div class="wf-blog-tag">Workspace</div></div>
+        <div class="wf-blog-body">
+          <div class="wf-blog-title">Why coworking spaces should foster physical fitness</div>
+          <div class="wf-blog-meta">Feb 10, 2026 &middot; 3 min read</div>
+        </div>
+      </div>
+      <div class="wf-blog-card">
+        <div class="wf-blog-img"><div class="wf-blog-tag">Event</div></div>
+        <div class="wf-blog-body">
+          <div class="wf-blog-title">eChai Demo Day: ideas meet honest conversations</div>
+          <div class="wf-blog-meta">Mar 6, 2026 &middot; Event recap</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="sec-alt">
+    <div class="section-tag">CONTACT — 2 COL: PANEL + FORM</div>
+    <div class="grid-2-stretch">
+      <div class="wf-contact-panel">
+        <div class="wf-contact-h">Let's find<br>your space.</div>
+        <div class="wf-contact-s">We respond within 2 hours.</div>
+        <div class="wf-contact-ph">+91 99890 16041</div>
+      </div>
+      <div class="wf-form-wrap">
+        <div class="eyebrow" style="margin-bottom:14px;">Get in touch</div>
+        <div class="wf-toggle">
+          <div class="wf-tog on">For myself</div>
+          <div class="wf-tog">For my team</div>
+        </div>
+        <div class="wf-frow">
+          <input class="wf-input" placeholder="Your name" disabled>
+          <input class="wf-input" placeholder="Phone number" disabled>
+        </div>
+        <div class="wf-frow">
+          <input class="wf-input" placeholder="Preferred location" disabled>
+          <input class="wf-input" placeholder="Workspace type" disabled>
+        </div>
+        <button class="wf-submit">Request a callback</button>
+        <div class="wf-hint">Or call us: +91 99890 16041 &middot; Available 9am&ndash;7pm</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="wf-foot-logo">CoKarma</div>
+    <div class="wf-foot-links">
+      <span>Locations</span><span>Workspaces</span><span>Events</span><span>Blogs</span><span>About</span><span>Contact</span>
+    </div>
+    <div class="wf-foot-copy">&copy; 2026 CoKarma &middot; Hyderabad</div>
+  </div>
+
+</div>
+</body>
+</html>
