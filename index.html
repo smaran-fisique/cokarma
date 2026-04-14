@@ -21,23 +21,23 @@
 .btn-s{font-size:11px;padding:7px 16px;border:none;border-radius:5px;background:#C90404;color:#fff;cursor:pointer;font-weight:600;font-family:'Poppins',sans-serif;}
 
 /* HERO */
-.hero{background:#FAEFDC;padding:80px 52px 72px;position:relative;overflow:hidden;min-height:85vh;display:flex;align-items:center;}
-.hero-img-right{position:absolute;right:0;top:0;bottom:0;width:46%;overflow:hidden;}
-
-.hero-img-right img{width:100%;height:100%;object-fit:cover;}
+.hero{background:#111;padding:80px 52px 72px;position:relative;overflow:hidden;min-height:85vh;display:flex;align-items:center;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.62) 0%,rgba(0,0,0,0.35) 55%,rgba(0,0,0,0.1) 100%);}
 .hero-deco-circle{position:absolute;top:-80px;right:-80px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(201,4,4,0.12);}
 .hero-deco-circle2{position:absolute;top:-40px;right:-40px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(201,4,4,0.08);}
 .hero-deco-dot{position:absolute;top:42px;right:220px;width:11px;height:11px;border-radius:50%;background:#C90404;opacity:0.3;}
 .hero-inner{max-width:720px;position:relative;z-index:1;}
-.hero-badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #F5C4C4;border-radius:20px;padding:7px 18px;margin-bottom:28px;}
-.hero-badge-dot{width:8px;height:8px;border-radius:50%;background:#C90404;}
-.hero-badge span{font-size:13px;font-weight:600;color:#8B0202;letter-spacing:0.2px;}
-.hero-h{font-family:'Montserrat',sans-serif;font-size:68px;font-weight:800;color:#111;line-height:1.05;letter-spacing:-2.5px;margin-bottom:22px;}
-.hero-h em{color:#C90404;font-style:normal;}
-.hero-sub{font-size:17px;color:#555;line-height:1.75;margin-bottom:38px;max-width:600px;font-weight:400;}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:7px 18px;margin-bottom:28px;backdrop-filter:blur(6px);}
+.hero-badge-dot{width:8px;height:8px;border-radius:50%;background:#ff4444;}
+.hero-badge span{font-size:13px;font-weight:600;color:#fff;letter-spacing:0.2px;}
+.hero-h{font-family:'Montserrat',sans-serif;font-size:68px;font-weight:800;color:#fff;line-height:1.05;letter-spacing:-2.5px;margin-bottom:22px;}
+.hero-h em{color:#ff6b6b;font-style:normal;}
+.hero-sub{font-size:17px;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:38px;max-width:600px;font-weight:400;}
 .hero-ctas{display:flex;align-items:center;gap:24px;}
 .hero-btn-p{background:#C90404;color:#fff;font-size:15px;font-weight:600;padding:15px 34px;border:none;border-radius:7px;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:0.2px;}
-.hero-btn-s{background:transparent;color:#C90404;font-size:14px;font-weight:600;padding:0;border:none;cursor:pointer;font-family:'Poppins',sans-serif;text-decoration:underline;text-underline-offset:3px;}
+.hero-btn-s{background:transparent;color:#fff;font-size:14px;font-weight:600;padding:0;border:none;cursor:pointer;font-family:'Poppins',sans-serif;text-decoration:underline;text-underline-offset:3px;opacity:0.85;}
 
 /* QUICK BOOK */
 .qbook{background:#fff;border-bottom:1px solid #ebebeb;padding:20px 52px;}
@@ -271,9 +271,9 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-deco-circle"></div>
-  <div class="hero-deco-circle2"></div>
-  <div class="hero-deco-dot"></div>
+  <div class="hero-bg">
+    <img src="hero.jpg" alt="CoKarma coworking space interior">
+  </div>
   <div class="hero-inner">
     <div class="hero-badge"><div class="hero-badge-dot"></div><span>13 locations across Hyderabad</span></div>
     <div class="hero-h">Flexible workspaces built for<br><em>focus, collaboration,</em><br>and growth.</div>
@@ -282,9 +282,6 @@
       <button class="hero-btn-p">Find your space</button>
       <button class="hero-btn-s">Need 20+ seats? Talk to our team &rarr;</button>
     </div>
-  </div>
-  <div class="hero-img-right">
-    <img src="hero.jpg" alt="CoKarma coworking space interior">
   </div>
 </div>
 
