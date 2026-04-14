@@ -208,6 +208,23 @@
 .blog-t{font-size:14px;font-weight:700;color:#111;line-height:1.55;margin-bottom:10px;font-family:'Montserrat',sans-serif;}
 .blog-meta{font-size:11px;color:#aaa;}
 
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start;}
+.faq-sticky{position:sticky;top:32px;}
+.faq-eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C90404;margin-bottom:14px;}
+.faq-h{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:800;color:#111;line-height:1.15;letter-spacing:-1px;margin-bottom:16px;}
+.faq-sub{font-size:14px;color:#777;line-height:1.7;}
+.faq-cta{margin-top:28px;display:inline-flex;align-items:center;gap:8px;background:#C90404;color:#fff;font-size:13px;font-weight:600;padding:12px 22px;border-radius:7px;cursor:pointer;}
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid #f0f0f0;}
+.faq-item:first-child{border-top:1px solid #f0f0f0;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:20px;}
+.faq-qt{font-size:14px;font-weight:600;color:#111;line-height:1.4;}
+.faq-icon{font-size:20px;color:#C90404;flex-shrink:0;font-weight:300;transition:transform 0.2s;line-height:1;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{font-size:13px;color:#666;line-height:1.75;padding-bottom:20px;display:none;}
+.faq-item.open .faq-a{display:block;}
+
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:stretch;}
 .contact-img{min-height:420px;border-radius:14px;background:#111;display:flex;flex-direction:column;justify-content:flex-end;padding:36px;position:relative;overflow:hidden;}
@@ -259,7 +276,7 @@
   <div class="hero-deco-dot"></div>
   <div class="hero-inner">
     <div class="hero-badge"><div class="hero-badge-dot"></div><span>13 locations across Hyderabad</span></div>
-    <div class="hero-h">Work where<br><em>Hyderabad</em> works.</div>
+    <div class="hero-h">Flexible workspaces built for<br><em>focus, collaboration,</em><br>and growth.</div>
     <div class="hero-sub">From day passes to 2,000-seat managed offices &mdash; one community, built for the city's most ambitious teams.</div>
     <div class="hero-ctas">
       <button class="hero-btn-p">Find your space</button>
@@ -562,8 +579,71 @@
   </div>
 </div>
 
+<!-- FAQ -->
+<div class="sec">
+  <div class="faq-grid">
+    <div class="faq-sticky">
+      <div class="faq-eyebrow">FAQ</div>
+      <div class="faq-h">Everything you<br>need to know.</div>
+      <div class="faq-sub">Can't find your answer? Talk to our team — we respond within 2 hours.</div>
+      <div class="faq-cta" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Ask us anything &rarr;</div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-qt">Are there any restrictions for operating hours?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">CoKarma is a flexible coworking space. We are accessible round the clock — 24/7, 365 days a year — for our monthly members. For temporary bookings such as day passes and meeting rooms, our spaces are available from 8am to 8pm.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-qt">Are different types of workspaces available?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">We offer pre-built "Private Cabins" for 2 to 50 people and customised "Managed Offices" from 20 to 2,000 people. We also have flexible options for individuals and freelancers — "Dedicated Desks" and on-demand "Day Passes". For quick meetings, we have a range of "Meeting Rooms" and conference spaces.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-qt">Can I customise the office space to fit my needs?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Yes, without a doubt! CoKarma provides personalised workspaces based on your preferences and brand personality. Choose from a variety of office styles that can be customised and created specifically for your company. We build fully managed, customised offices for enterprise clients with seat requirements from 20 to 2,000 seats.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-qt">What are the benefits of a shared flexible space?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Community is the biggest benefit. If you're a startup or a small-to-medium business, chances are you'll find complementary services — recruitment, accounting, digital marketing — right on your floor or within the CoKarma network. Beyond community, you get premium infrastructure, zero capital expenditure, and the flexibility to scale up or down as your team changes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-qt">How do I book an office space?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">You can call us at <strong>+91 99890 16041</strong> or fill in the "Request a call back" form below. Alternatively, navigate to our locations page and book an on-demand day pass or meeting room directly from our website.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-qt">What amenities are included?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Every CoKarma space includes high-speed business-grade internet, 100% power backup, fully equipped conference and meeting rooms, modern design with breakout areas and game zones, and unlimited free tea and coffee. We also provide event spaces for business and team meetings, along with a vibrant community of 20,000+ members.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-qt">Why CoKarma?</div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">CoKarma is one of the fastest-growing coworking spaces in Hyderabad, accessible 24/7 throughout the year. Our spaces are vibrant, community-driven environments that foster creativity, networking, and productivity — providing not just a desk and a chair, but a world of opportunities, services, and connections to help your business grow.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CONTACT -->
-<div class="sec-alt">
+<div class="sec-alt" id="contact-form">
   <div class="contact-grid">
     <div class="contact-img">
       <div class="contact-img-deco"></div>
