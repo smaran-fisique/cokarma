@@ -119,8 +119,14 @@
 .acc-open .acc-t{color:#C90404;}
 
 /* AMENITIES */
-.am-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.am-card{border:1px solid #ebebeb;border-radius:12px;padding:28px 24px;background:#fff;transition:border-color 0.2s,box-shadow 0.2s;}
+.am-marquee-wrap{overflow:hidden;width:100%;position:relative;}
+.am-marquee-wrap::before,.am-marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
+.am-marquee-wrap::before{left:0;background:linear-gradient(to right,#FAFAFA,transparent);}
+.am-marquee-wrap::after{right:0;background:linear-gradient(to left,#FAFAFA,transparent);}
+.am-track{display:flex;gap:16px;width:max-content;animation:am-scroll 32s linear infinite;}
+.am-track:hover{animation-play-state:paused;}
+@keyframes am-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.am-card{border:1px solid #ebebeb;border-radius:12px;padding:28px 24px;background:#fff;flex-shrink:0;width:220px;transition:border-color 0.2s,box-shadow 0.2s;}
 .am-card:hover{border-color:#F5C4C4;box-shadow:0 4px 20px rgba(201,4,4,0.06);}
 .am-icon{width:48px;height:48px;margin-bottom:16px;color:#C90404;}
 .am-t{font-size:13px;font-weight:700;color:#111;margin-bottom:5px;font-family:'Montserrat',sans-serif;}
@@ -364,66 +370,34 @@
   <div class="eyebrow">What's included</div>
   <div class="sec-h">Everything you need, built in.</div>
   <div class="sec-sub">Every CoKarma space comes fully equipped from day one.</div>
-  <div class="am-grid">
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 16c5-6 11-9 19-9s14 3 19 9"/><path d="M11 22c4-5 8-7 13-7s9 2 13 7"/><path d="M17 28c2-3 4-4 7-4s5 1 7 4"/><circle cx="24" cy="36" r="2" fill="currentColor"/></svg>
-      <div class="am-t">High Speed Internet</div>
-      <div class="am-s">Free Seamless Connectivity, Rapid Speeds</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="24" cy="24" r="18"/><polyline points="24,12 24,24 32,28"/><text x="8" y="44" font-size="7" fill="currentColor" stroke="none" font-family="sans-serif" font-weight="700">24</text></svg>
-      <div class="am-t">24x7 Access</div>
-      <div class="am-s">Uninterrupted Availability Around The Clock</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 6v6M24 36v6M6 24h6M36 24h6"/><circle cx="24" cy="24" r="10"/><path d="M20 14l4 10 4-4"/></svg>
-      <div class="am-t">Power Back-Up</div>
-      <div class="am-s">Reliable Power, Uninterrupted Operations</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="14" width="32" height="24" rx="2"/><path d="M16 14v-4a8 8 0 0116 0v4"/><circle cx="24" cy="26" r="3"/></svg>
-      <div class="am-t">Modern Design</div>
-      <div class="am-s">Sleek Aesthetics, Contemporary Elegance</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="18" width="40" height="18" rx="3"/><path d="M10 18V14a4 4 0 018 0v4M30 18V14a4 4 0 018 0v4"/><path d="M14 26h4M30 26h4"/></svg>
-      <div class="am-t">Accessible Commute</div>
-      <div class="am-s">Footsteps Away From Metro Stations And Bus Stops</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 8h32v24H8z"/><circle cx="24" cy="20" r="6"/><path d="M8 32l8-6 8 6 8-6 8 6"/></svg>
-      <div class="am-t">24x7 Surveillance</div>
-      <div class="am-s">Maximum Safety And Protection</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M14 38v4M34 38v4"/><circle cx="16" cy="24" r="4"/><circle cx="32" cy="24" r="4"/></svg>
-      <div class="am-t">Conference Rooms</div>
-      <div class="am-s">Where Ideas Take Flight</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 40c0-8 4-16 12-20 8 4 12 12 12 20"/><path d="M24 20V10"/><path d="M18 14l6-4 6 4"/><path d="M16 40h16"/></svg>
-      <div class="am-t">Housekeeping</div>
-      <div class="am-s">Impeccable Care, Seamless Comfort</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 30c0-6 4-10 10-10h12c6 0 10 4 10 10v2H8v-2z"/><path d="M6 32h36v4H6z"/><path d="M18 20v-6a6 6 0 0112 0v6"/></svg>
-      <div class="am-t">Lounge Area</div>
-      <div class="am-s">Casual Spaces For Relaxation And Informal Meetings</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="32" height="32" rx="2"/><path d="M16 8v32M8 16h10M8 24h10M8 32h10"/><path d="M28 20l6 4-6 4z" fill="currentColor" stroke="none"/></svg>
-      <div class="am-t">Events</div>
-      <div class="am-s">Innovative Ventures And Vibrant Networking</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M16 10V6M32 10V6"/><path d="M8 20h32"/><path d="M16 28h16M16 34h10"/></svg>
-      <div class="am-t">Printing</div>
-      <div class="am-s">Efficient Printing Solutions Are Available</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="14" width="40" height="24" rx="2"/><circle cx="24" cy="26" r="7"/><path d="M24 10v4M18 10h12"/></svg>
-      <div class="am-t">Projector</div>
-      <div class="am-s">High-Definition Projectors For Seamless Presentations</div>
+  <div class="am-marquee-wrap">
+    <div class="am-track">
+      <!-- Set 1 -->
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 16c5-6 11-9 19-9s14 3 19 9"/><path d="M11 22c4-5 8-7 13-7s9 2 13 7"/><path d="M17 28c2-3 4-4 7-4s5 1 7 4"/><circle cx="24" cy="36" r="2" fill="currentColor"/></svg><div class="am-t">High Speed Internet</div><div class="am-s">Free Seamless Connectivity, Rapid Speeds</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="24" cy="24" r="18"/><polyline points="24,12 24,24 32,28"/></svg><div class="am-t">24x7 Access</div><div class="am-s">Uninterrupted Availability Around The Clock</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 6v6M24 36v6M6 24h6M36 24h6"/><circle cx="24" cy="24" r="10"/><path d="M20 14l4 10 4-4"/></svg><div class="am-t">Power Back-Up</div><div class="am-s">Reliable Power, Uninterrupted Operations</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="14" width="32" height="24" rx="2"/><path d="M16 14v-4a8 8 0 0116 0v4"/><circle cx="24" cy="26" r="3"/></svg><div class="am-t">Modern Design</div><div class="am-s">Sleek Aesthetics, Contemporary Elegance</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="18" width="40" height="18" rx="3"/><path d="M10 18V14a4 4 0 018 0v4M30 18V14a4 4 0 018 0v4"/><path d="M14 26h4M30 26h4"/></svg><div class="am-t">Accessible Commute</div><div class="am-s">Footsteps Away From Metro Stations And Bus Stops</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 8h32v24H8z"/><circle cx="24" cy="20" r="6"/><path d="M8 32l8-6 8 6 8-6 8 6"/></svg><div class="am-t">24x7 Surveillance</div><div class="am-s">Maximum Safety And Protection</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M14 38v4M34 38v4"/><circle cx="16" cy="24" r="4"/><circle cx="32" cy="24" r="4"/></svg><div class="am-t">Conference Rooms</div><div class="am-s">Where Ideas Take Flight</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 40c0-8 4-16 12-20 8 4 12 12 12 20"/><path d="M24 20V10"/><path d="M18 14l6-4 6 4"/><path d="M16 40h16"/></svg><div class="am-t">Housekeeping</div><div class="am-s">Impeccable Care, Seamless Comfort</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 30c0-6 4-10 10-10h12c6 0 10 4 10 10v2H8v-2z"/><path d="M6 32h36v4H6z"/><path d="M18 20v-6a6 6 0 0112 0v6"/></svg><div class="am-t">Lounge Area</div><div class="am-s">Casual Spaces For Relaxation And Informal Meetings</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="32" height="32" rx="2"/><path d="M16 8v32M8 16h10M8 24h10M8 32h10"/><path d="M28 20l6 4-6 4z" fill="currentColor" stroke="none"/></svg><div class="am-t">Events</div><div class="am-s">Innovative Ventures And Vibrant Networking</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M16 10V6M32 10V6"/><path d="M8 20h32"/><path d="M16 28h16M16 34h10"/></svg><div class="am-t">Printing</div><div class="am-s">Efficient Printing Solutions Are Available</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="14" width="40" height="24" rx="2"/><circle cx="24" cy="26" r="7"/><path d="M24 10v4M18 10h12"/></svg><div class="am-t">Projector</div><div class="am-s">High-Definition Projectors For Seamless Presentations</div></div>
+      <!-- Set 2 (duplicate for infinite scroll) -->
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 16c5-6 11-9 19-9s14 3 19 9"/><path d="M11 22c4-5 8-7 13-7s9 2 13 7"/><path d="M17 28c2-3 4-4 7-4s5 1 7 4"/><circle cx="24" cy="36" r="2" fill="currentColor"/></svg><div class="am-t">High Speed Internet</div><div class="am-s">Free Seamless Connectivity, Rapid Speeds</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="24" cy="24" r="18"/><polyline points="24,12 24,24 32,28"/></svg><div class="am-t">24x7 Access</div><div class="am-s">Uninterrupted Availability Around The Clock</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 6v6M24 36v6M6 24h6M36 24h6"/><circle cx="24" cy="24" r="10"/><path d="M20 14l4 10 4-4"/></svg><div class="am-t">Power Back-Up</div><div class="am-s">Reliable Power, Uninterrupted Operations</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="14" width="32" height="24" rx="2"/><path d="M16 14v-4a8 8 0 0116 0v4"/><circle cx="24" cy="26" r="3"/></svg><div class="am-t">Modern Design</div><div class="am-s">Sleek Aesthetics, Contemporary Elegance</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="18" width="40" height="18" rx="3"/><path d="M10 18V14a4 4 0 018 0v4M30 18V14a4 4 0 018 0v4"/><path d="M14 26h4M30 26h4"/></svg><div class="am-t">Accessible Commute</div><div class="am-s">Footsteps Away From Metro Stations And Bus Stops</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 8h32v24H8z"/><circle cx="24" cy="20" r="6"/><path d="M8 32l8-6 8 6 8-6 8 6"/></svg><div class="am-t">24x7 Surveillance</div><div class="am-s">Maximum Safety And Protection</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M14 38v4M34 38v4"/><circle cx="16" cy="24" r="4"/><circle cx="32" cy="24" r="4"/></svg><div class="am-t">Conference Rooms</div><div class="am-s">Where Ideas Take Flight</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 40c0-8 4-16 12-20 8 4 12 12 12 20"/><path d="M24 20V10"/><path d="M18 14l6-4 6 4"/><path d="M16 40h16"/></svg><div class="am-t">Housekeeping</div><div class="am-s">Impeccable Care, Seamless Comfort</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 30c0-6 4-10 10-10h12c6 0 10 4 10 10v2H8v-2z"/><path d="M6 32h36v4H6z"/><path d="M18 20v-6a6 6 0 0112 0v6"/></svg><div class="am-t">Lounge Area</div><div class="am-s">Casual Spaces For Relaxation And Informal Meetings</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="32" height="32" rx="2"/><path d="M16 8v32M8 16h10M8 24h10M8 32h10"/><path d="M28 20l6 4-6 4z" fill="currentColor" stroke="none"/></svg><div class="am-t">Events</div><div class="am-s">Innovative Ventures And Vibrant Networking</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M16 10V6M32 10V6"/><path d="M8 20h32"/><path d="M16 28h16M16 34h10"/></svg><div class="am-t">Printing</div><div class="am-s">Efficient Printing Solutions Are Available</div></div>
+      <div class="am-card"><svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="14" width="40" height="24" rx="2"/><circle cx="24" cy="26" r="7"/><path d="M24 10v4M18 10h12"/></svg><div class="am-t">Projector</div><div class="am-s">High-Definition Projectors For Seamless Presentations</div></div>
     </div>
   </div>
 </div>
