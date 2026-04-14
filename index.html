@@ -247,25 +247,26 @@
   <div class="qbook-inner">
     <div class="qbook-field">
       <div class="qbook-label">Name</div>
-      <input class="qbook-input" placeholder="Enter your name">
-    </div>
-    <div class="qbook-field">
-      <div class="qbook-label">Type of Booking</div>
-      <select class="qbook-select">
-        <option value="" disabled selected>Select your booking</option>
-        <option>Private Office</option>
-        <option>Managed Office</option>
-        <option>Dedicated Desk</option>
-        <option>Day Pass</option>
-      </select>
+      <input class="qbook-input" id="qb-name" placeholder="Enter your name">
     </div>
     <div class="qbook-field">
       <div class="qbook-label">Phone Number</div>
-      <input class="qbook-input" placeholder="Enter your phone number">
+      <input class="qbook-input" id="qb-phone" placeholder="Enter your phone number">
     </div>
-    <button class="qbook-btn">
-      Request a Call Back
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <div class="qbook-field">
+      <div class="qbook-label">Type of Booking</div>
+      <select class="qbook-select" id="qb-type" onchange="updateQbBtn()">
+        <option value="" disabled selected>Select your booking</option>
+        <option value="private">Private Office</option>
+        <option value="managed">Managed Office</option>
+        <option value="desk">Dedicated Desk</option>
+        <option value="day">Day Pass</option>
+      </select>
+    </div>
+    <button class="qbook-btn" id="qb-btn">
+      <span id="qb-btn-text">Request a Call Back</span>
+      <svg id="qb-icon-call" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <svg id="qb-icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
   </div>
 </div>
@@ -572,6 +573,13 @@
 <script>
 function ta(el){document.querySelectorAll('.acc-item').forEach(i=>i.classList.remove('acc-open'));el.classList.add('acc-open');}
 function st(el){document.querySelectorAll('.tog').forEach(o=>o.classList.remove('on'));el.classList.add('on');}
+function updateQbBtn(){
+  const v=document.getElementById('qb-type').value;
+  const isPrivate=v==='private';
+  document.getElementById('qb-btn-text').textContent=isPrivate?'Request a Call Back':'Book Now';
+  document.getElementById('qb-icon-call').style.display=isPrivate?'':'none';
+  document.getElementById('qb-icon-book').style.display=isPrivate?'none':'';
+}
 let cur=0;const total=5;
 function goTo(n){cur=n;document.getElementById('slides').style.transform=`translateX(-${cur*100}%)`;document.querySelectorAll('.cdot').forEach((d,i)=>d.classList.toggle('active',i===cur));}
 function slide(dir){goTo((cur+dir+total)%total);}
