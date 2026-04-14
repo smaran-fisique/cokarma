@@ -160,6 +160,16 @@
 .evt-title{font-size:22px;font-weight:700;color:#fff;font-family:'Montserrat',sans-serif;margin-bottom:6px;}
 .evt-date{font-size:12px;color:rgba(255,255,255,0.5);}
 .evt-cta{font-size:13px;color:#fff;font-weight:700;cursor:pointer;background:#C90404;padding:13px 26px;border-radius:7px;white-space:nowrap;letter-spacing:0.2px;}
+/* Events — compact list (multi-event state) */
+.evt-list{margin-top:12px;border:1px solid #ebebeb;border-radius:12px;overflow:hidden;}
+.evt-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid #f0f0f0;background:#fff;}
+.evt-row:last-child{border-bottom:none;background:#FAFAFA;}
+.evt-row-left{display:flex;align-items:center;gap:14px;}
+.evt-row-badge{padding:3px 8px;background:#fff0f0;border-radius:3px;font-size:9px;font-weight:700;color:#C90404;letter-spacing:1px;text-transform:uppercase;border:1px solid #fdd;}
+.evt-row-title{font-size:13px;font-weight:600;color:#222;margin-bottom:2px;}
+.evt-row-meta{font-size:10px;color:#aaa;letter-spacing:0.2px;}
+.evt-row-cta{font-size:12px;font-weight:700;color:#C90404;white-space:nowrap;}
+.evt-row-overflow{color:#aaa;font-size:13px;font-weight:600;}
 
 /* TESTIMONIALS */
 .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
@@ -451,15 +461,45 @@
   <div class="eyebrow">Events</div>
   <div class="sec-h">Where the community gathers.</div>
   <div class="sec-sub">Demo days, GCC briefings, startup meetups &mdash; hosted monthly across all 13 locations.</div>
+  <!-- Featured event card (always shown) -->
   <div class="evt-card">
     <div class="evt-left">
-      <div class="evt-badge">Upcoming</div>
+      <div class="evt-badge">Featured</div>
       <div>
         <div class="evt-title">eChai &times; CoKarma &mdash; Startup Demo Day</div>
         <div class="evt-date">Apr 18, 2026 &middot; Kokapet</div>
       </div>
     </div>
     <div class="evt-cta">Register free &rarr;</div>
+  </div>
+  <!-- Additional events list (multi-event state) -->
+  <div class="evt-list">
+    <div class="evt-row">
+      <div class="evt-row-left">
+        <div class="evt-row-badge">Upcoming</div>
+        <div>
+          <div class="evt-row-title">GCC Leadership Roundtable &mdash; Hyderabad</div>
+          <div class="evt-row-meta">May 6, 2026 &middot; Financial District</div>
+        </div>
+      </div>
+      <div class="evt-row-cta">Register &rarr;</div>
+    </div>
+    <div class="evt-row">
+      <div class="evt-row-left">
+        <div class="evt-row-badge">Upcoming</div>
+        <div>
+          <div class="evt-row-title">CoKarma Open House &mdash; Kokapet Campus</div>
+          <div class="evt-row-meta">May 14, 2026 &middot; Kokapet</div>
+        </div>
+      </div>
+      <div class="evt-row-cta">Register &rarr;</div>
+    </div>
+    <div class="evt-row">
+      <div class="evt-row-left">
+        <div class="evt-row-overflow">View all upcoming events</div>
+      </div>
+      <div class="evt-row-cta">See all &rarr;</div>
+    </div>
   </div>
 </div>
 

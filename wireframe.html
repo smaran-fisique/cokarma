@@ -128,6 +128,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .wf-evt-title{font-size:20px;font-weight:700;color:#ddd;margin-bottom:5px;}
 .wf-evt-date{font-size:11px;color:#777;}
 .wf-evt-cta{padding:13px 26px;background:#555;border-radius:7px;font-size:13px;font-weight:700;color:#ccc;}
+/* Events — compact list rows (multi-event state) */
+.wf-evt-list{margin-top:12px;display:flex;flex-direction:column;gap:0;}
+.wf-evt-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #ebebeb;background:#fff;}
+.wf-evt-row:last-child{border-bottom:none;}
+.wf-evt-row-left{display:flex;align-items:center;gap:14px;}
+.wf-evt-row-badge{padding:3px 8px;background:#eee;border-radius:3px;font-size:9px;font-weight:700;color:#aaa;letter-spacing:1px;text-transform:uppercase;}
+.wf-evt-row-title{font-size:13px;font-weight:600;color:#444;margin-bottom:2px;}
+.wf-evt-row-meta{font-size:10px;color:#aaa;}
+.wf-evt-row-cta{font-size:11px;font-weight:700;color:#888;white-space:nowrap;}
 
 /* TESTIMONIALS */
 .grid-3-gap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
@@ -426,13 +435,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <!-- EVENTS -->
   <div class="sec">
-    <div class="section-tag">EVENTS — STANDALONE SECTION</div>
+    <div class="section-tag">EVENTS — FEATURED CARD + COMPACT LIST (MULTI-EVENT STATE)</div>
     <div class="eyebrow">Events</div>
     <div class="sec-h">Where the community gathers.</div>
     <div class="sec-sub">Demo days, GCC briefings, startup meetups &mdash; hosted monthly across all 13 locations.</div>
+
+    <!-- Featured event (always shown — the "hero" event) -->
     <div class="wf-evt-card">
       <div class="wf-evt-left">
-        <div class="wf-evt-badge">Upcoming</div>
+        <div class="wf-evt-badge">Featured</div>
         <div>
           <div class="wf-evt-title">eChai &times; CoKarma &mdash; Startup Demo Day</div>
           <div class="wf-evt-date">Apr 18, 2026 &middot; Kokapet</div>
@@ -440,15 +451,47 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       </div>
       <div class="wf-evt-cta">Register free &rarr;</div>
     </div>
-    <div class="wf-note">Dark card · badge left · CTA button right · can expand to multiple event cards</div>
+
+    <!-- Additional events list (shown only when 2+ events exist) -->
+    <div class="wf-evt-list" style="border:1.5px solid #ebebeb;border-radius:12px;overflow:hidden;margin-top:12px;">
+      <div class="wf-evt-row">
+        <div class="wf-evt-row-left">
+          <div class="wf-evt-row-badge">Upcoming</div>
+          <div>
+            <div class="wf-evt-row-title">GCC Leadership Roundtable &mdash; Hyderabad</div>
+            <div class="wf-evt-row-meta">May 6, 2026 &middot; Financial District</div>
+          </div>
+        </div>
+        <div class="wf-evt-row-cta">Register &rarr;</div>
+      </div>
+      <div class="wf-evt-row">
+        <div class="wf-evt-row-left">
+          <div class="wf-evt-row-badge">Upcoming</div>
+          <div>
+            <div class="wf-evt-row-title">CoKarma Open House &mdash; Kokapet Campus</div>
+            <div class="wf-evt-row-meta">May 14, 2026 &middot; Kokapet</div>
+          </div>
+        </div>
+        <div class="wf-evt-row-cta">Register &rarr;</div>
+      </div>
+      <div class="wf-evt-row" style="background:#f9f9f9;">
+        <div class="wf-evt-row-left" style="color:#bbb;">
+          <div class="wf-evt-row-badge" style="opacity:0.5;">+3 more</div>
+          <div class="wf-evt-row-title" style="color:#bbb;">View all events</div>
+        </div>
+        <div class="wf-evt-row-cta">See all &rarr;</div>
+      </div>
+    </div>
+
+    <div class="wf-note">Single-event state: show featured card only · Multi-event state: featured card + compact list rows below</div>
     <div class="ann">
       <div class="ann-arrow">←</div>
       <div class="ann-box">
-        <div class="ann-title">Events</div>
-        <div class="ann-rule"><b>Featured event</b> card (dark bg)</div>
-        <div class="ann-rule"><b>Left:</b> Badge + title + date/location</div>
-        <div class="ann-rule"><b>Right:</b> "Register free →" CTA</div>
-        <div class="ann-muted">Can stack multiple event cards vertically as events grow</div>
+        <div class="ann-title">Events — 2 States</div>
+        <div class="ann-rule"><b>Single event:</b> featured dark card only</div>
+        <div class="ann-rule"><b>Multi-event:</b> featured card + compact list rows below</div>
+        <div class="ann-rule"><b>List row:</b> badge · title · date/location · CTA</div>
+        <div class="ann-muted">Last row = "View all events" overflow link</div>
       </div>
     </div>
   </div>
