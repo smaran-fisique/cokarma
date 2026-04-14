@@ -22,6 +22,9 @@
 
 /* HERO */
 .hero{background:#FAEFDC;padding:80px 52px 72px;position:relative;overflow:hidden;min-height:85vh;display:flex;align-items:center;}
+.hero-img-right{position:absolute;right:0;top:0;bottom:0;width:46%;overflow:hidden;}
+.hero-img-right::before{content:'';position:absolute;left:0;top:0;bottom:0;width:120px;background:linear-gradient(to right,#FAEFDC,transparent);z-index:1;}
+.hero-img-right img{width:100%;height:100%;object-fit:cover;}
 .hero-deco-circle{position:absolute;top:-80px;right:-80px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(201,4,4,0.12);}
 .hero-deco-circle2{position:absolute;top:-40px;right:-40px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(201,4,4,0.08);}
 .hero-deco-dot{position:absolute;top:42px;right:220px;width:11px;height:11px;border-radius:50%;background:#C90404;opacity:0.3;}
@@ -62,11 +65,12 @@
 .loc-card{border:1px solid #ebebeb;border-radius:10px;overflow:hidden;background:#fff;cursor:pointer;}
 .loc-card:hover{border-color:#F5C4C4;}
 .loc-img{height:200px;display:flex;align-items:center;justify-content:center;}
-.li-1{background:#F0EDF5;}
-.li-2{background:#EDF0F5;}
-.li-3{background:#EDF5F0;}
-.li-4{background:#F5EDF0;}
-.li-5{background:#F5F0ED;}
+.li-1,.li-2,.li-3,.li-4,.li-5{background-size:cover;background-position:center;}
+.li-1{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1738056655583-ZjOU1000x1000.jpeg');}
+.li-2{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1734588958108-2HBq1000x1000.jpeg');}
+.li-3{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1711695005044-kBzB1000x1000.jpeg');}
+.li-4{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1738061629596-e5yS1000x1000.jpeg');}
+.li-5{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1695981172338-AMI01000x1000.jpeg');}
 .li-more{background:#FBEAEA;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;}
 .li-more-n{font-size:26px;font-weight:800;color:#C90404;font-family:'Montserrat',sans-serif;}
 .li-more-s{font-size:10px;color:#C90404;font-weight:500;}
@@ -79,12 +83,14 @@
 .ws-card{border:1px solid #ebebeb;border-radius:10px;overflow:hidden;background:#fff;transition:border-color 0.2s;}
 .ws-card:hover{border-color:#F5C4C4;}
 .ws-img{height:220px;display:flex;align-items:flex-end;padding:14px;position:relative;}
-.wi-1{background:#F5EAEA;}
-.wi-2{background:#EAEAf5;}
-.wi-3{background:#EAF5EA;}
-.wi-4{background:#F5F0EA;}
-.ws-img-icon{font-size:28px;position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);opacity:0.25;}
-.ws-lbl{font-size:9px;font-weight:700;color:#aaa;letter-spacing:1px;text-transform:uppercase;}
+.wi-1,.wi-2,.wi-3,.wi-4{background-size:cover;background-position:center;}
+.wi-1{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1711762812535-SMGB1000x1000.jpeg');}
+.wi-2{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1723189591396-g7wC1000x1000.jpeg');}
+.wi-3{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1711762829090-yYMR1000x1000.jpeg');}
+.wi-4{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1713084439181-gWrV1000x1000.jpeg');}
+.ws-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,transparent 55%);}
+.ws-img-icon{display:none;}
+.ws-lbl{font-size:9px;font-weight:700;color:rgba(255,255,255,0.9);letter-spacing:1px;text-transform:uppercase;position:relative;z-index:1;}
 .ws-body{padding:14px 16px;}
 .ws-t{font-size:13px;font-weight:700;color:#111;margin-bottom:3px;font-family:'Montserrat',sans-serif;}
 .ws-c{font-size:11px;color:#888;margin-bottom:13px;}
@@ -95,11 +101,13 @@
 .carousel{position:relative;height:360px;border-radius:10px;overflow:hidden;}
 .carousel-slides{display:flex;height:100%;transition:transform 0.4s ease;}
 .carousel-slide{min-width:100%;height:100%;display:flex;align-items:flex-end;padding:20px;position:relative;}
-.cs-1{background:linear-gradient(135deg,#1a1a2e,#16213e);}
-.cs-2{background:linear-gradient(135deg,#0f3460,#533483);}
-.cs-3{background:linear-gradient(135deg,#111,#2d2d2d);}
-.cs-4{background:linear-gradient(135deg,#1b4332,#2d6a4f);}
-.cs-5{background:linear-gradient(135deg,#370617,#6a040f);}
+.cs-1,.cs-2,.cs-3,.cs-4,.cs-5{background-size:cover;background-position:center;}
+.cs-1{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1738056655583-ZjOU1000x1000.jpeg');}
+.cs-2{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1734588958108-2HBq1000x1000.jpeg');}
+.cs-3{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1711695005044-kBzB1000x1000.jpeg');}
+.cs-4{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1742650581632-8Tcf1000x1000.png');}
+.cs-5{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1738136201180-T4pp1000x1000.jpeg');}
+.carousel-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 60%);}
 .carousel-tag{background:#C90404;border-radius:5px;padding:6px 12px;font-size:10px;font-weight:600;color:#fff;position:relative;z-index:1;}
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:background 0.2s;}
 .carousel-btn:hover{background:rgba(255,255,255,0.3);}
@@ -189,11 +197,13 @@
 .blog-card{border:1px solid #ebebeb;border-radius:14px;overflow:hidden;background:#fff;transition:box-shadow 0.2s,border-color 0.2s;}
 .blog-card:hover{border-color:#F5C4C4;box-shadow:0 4px 24px rgba(201,4,4,0.07);}
 .blog-img{height:180px;position:relative;}
-.bl-1{background:#EAF0F5;}
-.bl-2{background:#F0EAF5;}
-.bl-3{background:#EAF5EA;}
-.blog-tag{position:absolute;top:14px;left:14px;background:rgba(0,0,0,0.12);border-radius:4px;padding:4px 10px;font-size:10px;color:#333;font-weight:700;letter-spacing:0.5px;}
-.evt-blog-tag{position:absolute;top:14px;left:14px;background:#FBEAEA;border-radius:4px;padding:4px 10px;font-size:10px;color:#8B0202;font-weight:700;letter-spacing:0.5px;}
+.bl-1,.bl-2,.bl-3{background-size:cover;background-position:center;}
+.bl-1{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1723189591387-FFWg1000x1000.jpeg');}
+.bl-2{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1713084439181-gWrV1000x1000.jpeg');}
+.bl-3{background-image:url('https://s3.ap-southeast-1.amazonaws.com/collabzilla/location-images/1738056655583-ZjOU1000x1000.jpeg');}
+.blog-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15),transparent 60%);}
+.blog-tag{position:absolute;top:14px;left:14px;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);border-radius:4px;padding:4px 10px;font-size:10px;color:#fff;font-weight:700;letter-spacing:0.5px;z-index:1;}
+.evt-blog-tag{position:absolute;top:14px;left:14px;background:#C90404;border-radius:4px;padding:4px 10px;font-size:10px;color:#fff;font-weight:700;letter-spacing:0.5px;z-index:1;}
 .blog-body{padding:20px;}
 .blog-t{font-size:14px;font-weight:700;color:#111;line-height:1.55;margin-bottom:10px;font-family:'Montserrat',sans-serif;}
 .blog-meta{font-size:11px;color:#aaa;}
@@ -255,6 +265,9 @@
       <button class="hero-btn-p">Find your space</button>
       <button class="hero-btn-s">Need 20+ seats? Talk to our team &rarr;</button>
     </div>
+  </div>
+  <div class="hero-img-right">
+    <img src="https://www.cokarma.in/images/Tem%20Hero%20Frame1.png" alt="CoKarma coworking space interior">
   </div>
 </div>
 
