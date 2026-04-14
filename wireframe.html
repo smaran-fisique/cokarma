@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f0f0;color:#333;}
-.page{background:#fff;max-width:1200px;margin:32px auto;border:1px solid #ccc;box-shadow:0 2px 16px rgba(0,0,0,0.08);}
+.page{background:#fff;max-width:1200px;margin:32px auto;border:1px solid #ccc;box-shadow:0 2px 16px rgba(0,0,0,0.08);position:relative;overflow:visible;}
 
 /* NAV */
 .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:2px solid #e0e0e0;background:#fff;}
@@ -31,17 +31,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .wf-btn-text{font-size:13px;color:#888;font-weight:600;text-decoration:underline;text-underline-offset:3px;}
 
 /* QUICK BOOK */
-.qbook{background:#fff;border-bottom:2px solid #e0e0e0;padding:20px 40px;}
-.qbook-row{display:flex;align-items:center;gap:20px;}
-.qbook-inner{flex:1;display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid #ddd;border-radius:10px;padding:14px 20px;}
+.qbook{background:#fff;border-bottom:2px solid #e0e0e0;padding:20px 40px;position:relative;}
+.qbook-inner{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid #ddd;border-radius:10px;padding:14px 20px;}
 .qbook-field{flex:1;border-right:1px solid #e0e0e0;padding-right:20px;}
 .qbook-field:last-of-type{border-right:none;}
 .qbook-label{font-size:9px;font-weight:700;color:#aaa;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
 .qbook-placeholder{font-size:13px;color:#bbb;}
 .qbook-btn{padding:12px 22px;border:1.5px solid #bbb;border-radius:7px;font-size:12px;font-weight:700;color:#888;white-space:nowrap;background:#fff;}
-.qbook-annotation{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.qbook-arrow{font-size:22px;color:#aaa;line-height:1;}
-.qbook-ann-box{border:1.5px dashed #bbb;border-radius:8px;padding:10px 14px;background:#fafafa;max-width:200px;}
+.qbook-annotation{position:absolute;left:calc(100% + 16px);top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:10px;white-space:nowrap;}
+.qbook-arrow{font-size:20px;color:#aaa;line-height:1;}
+.qbook-ann-box{border:1.5px dashed #bbb;border-radius:8px;padding:10px 14px;background:#fafafa;white-space:normal;width:200px;}
 .qbook-ann-title{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:6px;}
 .qbook-ann-rule{font-size:11px;color:#777;line-height:1.6;}
 
@@ -196,30 +195,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <!-- QUICK BOOK -->
   <div class="qbook">
     <div class="section-tag" style="margin-bottom:12px;">QUICK BOOK STRIP — INLINE BELOW HERO</div>
-    <div class="qbook-row">
-      <div class="qbook-inner">
-        <div class="qbook-field">
-          <div class="qbook-label">Name</div>
-          <div class="qbook-placeholder">Enter your name</div>
-        </div>
-        <div class="qbook-field">
-          <div class="qbook-label">Phone Number</div>
-          <div class="qbook-placeholder">Enter your phone number</div>
-        </div>
-        <div class="qbook-field">
-          <div class="qbook-label">Type of Booking</div>
-          <div class="qbook-placeholder">Select your booking ▾</div>
-        </div>
-        <div class="qbook-btn">Book Now →</div>
+    <div class="qbook-inner">
+      <div class="qbook-field">
+        <div class="qbook-label">Name</div>
+        <div class="qbook-placeholder">Enter your name</div>
       </div>
-      <div class="qbook-annotation">
-        <div class="qbook-arrow">←</div>
-        <div class="qbook-ann-box">
-          <div class="qbook-ann-title">CTA Logic</div>
-          <div class="qbook-ann-rule"><b>Default:</b> "Book Now"</div>
-          <div class="qbook-ann-rule"><b>Private Office:</b> "Request a Call Back"</div>
-          <div class="qbook-ann-rule" style="margin-top:6px;color:#aaa;">All other types keep "Book Now"</div>
-        </div>
+      <div class="qbook-field">
+        <div class="qbook-label">Phone Number</div>
+        <div class="qbook-placeholder">Enter your phone number</div>
+      </div>
+      <div class="qbook-field">
+        <div class="qbook-label">Type of Booking</div>
+        <div class="qbook-placeholder">Select your booking ▾</div>
+      </div>
+      <div class="qbook-btn">Book Now →</div>
+    </div>
+    <div class="qbook-annotation">
+      <div class="qbook-arrow">←</div>
+      <div class="qbook-ann-box">
+        <div class="qbook-ann-title">CTA Logic</div>
+        <div class="qbook-ann-rule"><b>Default:</b> "Book Now"</div>
+        <div class="qbook-ann-rule"><b>Private Office:</b> "Request a Call Back"</div>
+        <div class="qbook-ann-rule" style="margin-top:6px;color:#aaa;">All other types keep "Book Now"</div>
       </div>
     </div>
   </div>
