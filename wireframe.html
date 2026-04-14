@@ -9,8 +9,16 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f0f0;color:#333;}
 .page{background:#fff;max-width:1200px;margin:32px auto;border:1px solid #ccc;box-shadow:0 2px 16px rgba(0,0,0,0.08);position:relative;overflow:visible;}
 
+/* SHARED ANNOTATIONS */
+.ann{position:absolute;left:calc(100% + 16px);top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:10px;white-space:nowrap;z-index:10;}
+.ann-arrow{font-size:20px;color:#aaa;line-height:1;}
+.ann-box{border:1.5px dashed #bbb;border-radius:8px;padding:10px 14px;background:#fafafa;white-space:normal;width:200px;}
+.ann-title{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:6px;}
+.ann-rule{font-size:11px;color:#777;line-height:1.6;}
+.ann-muted{font-size:11px;color:#aaa;line-height:1.6;margin-top:4px;}
+
 /* NAV */
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:2px solid #e0e0e0;background:#fff;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:2px solid #e0e0e0;background:#fff;position:relative;}
 .wf-logo{font-size:16px;font-weight:800;color:#555;letter-spacing:-0.5px;}
 .wf-nav-links{display:flex;gap:28px;font-size:12px;color:#777;font-weight:500;}
 .wf-nav-right{display:flex;gap:10px;}
@@ -18,7 +26,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .wf-btn-solid{padding:7px 18px;border:none;border-radius:4px;background:#bbb;font-size:11px;color:#fff;font-weight:600;}
 
 /* HERO */
-.hero{min-height:85vh;padding:80px 40px;background:#f7f7f7;border-bottom:2px solid #e0e0e0;display:flex;align-items:center;}
+.hero{min-height:85vh;padding:80px 40px;background:#f7f7f7;border-bottom:2px solid #e0e0e0;display:flex;align-items:center;position:relative;}
 .hero-content{max-width:600px;}
 .wf-badge{display:inline-flex;align-items:center;gap:8px;border:1.5px solid #ddd;border-radius:20px;padding:6px 16px;margin-bottom:28px;background:#fff;}
 .wf-badge-dot{width:8px;height:8px;border-radius:50%;background:#bbb;flex-shrink:0;}
@@ -45,9 +53,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .qbook-ann-rule{font-size:11px;color:#777;line-height:1.6;}
 
 /* SECTIONS */
-.sec{padding:80px 40px;border-bottom:2px solid #e0e0e0;}
-.sec-alt{padding:80px 40px;border-bottom:2px solid #e0e0e0;background:#f9f9f9;}
-.sec-cream{padding:80px 40px;border-bottom:2px solid #e0e0e0;background:#f5f0e8;}
+.sec{padding:80px 40px;border-bottom:2px solid #e0e0e0;position:relative;}
+.sec-alt{padding:80px 40px;border-bottom:2px solid #e0e0e0;background:#f9f9f9;position:relative;}
+.sec-cream{padding:80px 40px;border-bottom:2px solid #e0e0e0;background:#f5f0e8;position:relative;}
 .eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:12px;}
 .sec-h{font-size:32px;font-weight:800;color:#333;letter-spacing:-1px;margin-bottom:12px;line-height:1.15;}
 .sec-sub{font-size:13px;color:#888;margin-bottom:36px;line-height:1.65;}
@@ -100,7 +108,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .wf-am-s{font-size:11px;color:#aaa;line-height:1.6;}
 
 /* STATS */
-.stats-bar{background:#333;padding:52px 40px;}
+.stats-bar{background:#333;padding:52px 40px;position:relative;}
 .stats-inner{display:flex;justify-content:space-around;align-items:center;}
 .stat-item{text-align:center;}
 .stat-n{font-size:48px;font-weight:800;color:#fff;line-height:1;}
@@ -108,7 +116,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .stat-div{width:1px;height:64px;background:rgba(255,255,255,0.15);}
 
 /* TRUSTED */
-.trusted{padding:40px;border-bottom:2px solid #e0e0e0;overflow:hidden;}
+.trusted{padding:40px;border-bottom:2px solid #e0e0e0;overflow:hidden;position:relative;}
 .trusted-lbl{font-size:10px;color:#bbb;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;font-weight:600;}
 .wf-logos{display:flex;gap:16px;overflow:hidden;}
 .wf-logo-item{min-width:120px;height:48px;background:#f4f4f4;border:1.5px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#aaa;flex-shrink:0;}
@@ -157,7 +165,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .wf-hint{font-size:11px;color:#bbb;margin-top:2px;}
 
 /* FOOTER */
-.footer{padding:28px 40px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid #e0e0e0;}
+.footer{padding:28px 40px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid #e0e0e0;position:relative;}
 .wf-foot-logo{font-size:15px;font-weight:800;color:#777;}
 .wf-foot-links{display:flex;gap:20px;font-size:11px;color:#aaa;font-weight:500;}
 .wf-foot-copy{font-size:10px;color:#ccc;}
@@ -176,6 +184,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="wf-btn-ghost">Log in</div>
       <div class="wf-btn-solid">Get in Touch</div>
     </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Navigation</div>
+        <div class="ann-rule"><b>Left:</b> Logo (links home)</div>
+        <div class="ann-rule"><b>Centre:</b> 5 nav links</div>
+        <div class="ann-rule"><b>Right:</b> "Log in" (ghost) + "Get in Touch" (solid CTA)</div>
+        <div class="ann-muted">Sticky on scroll · collapses to hamburger on mobile</div>
+      </div>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -188,6 +206,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="wf-ctas">
         <div class="wf-btn-primary">Find your space</div>
         <div class="wf-btn-text">Need 20+ seats? Talk to our team &rarr;</div>
+      </div>
+    </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Hero</div>
+        <div class="ann-rule"><b>Height:</b> 85vh min</div>
+        <div class="ann-rule"><b>Primary CTA:</b> "Find your space" → locations</div>
+        <div class="ann-rule"><b>Secondary CTA:</b> Enterprise link → contact form</div>
+        <div class="ann-muted">Badge highlights 13 locations · no hero image (copy-first layout)</div>
       </div>
     </div>
   </div>
@@ -238,6 +266,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <div class="wf-loc-body"><div class="wf-loc-name">See all 13 &rarr;</div><div class="wf-loc-meta">Begumpet, Madhapur &amp; more</div></div>
       </div>
     </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Locations</div>
+        <div class="ann-rule"><b>Layout:</b> 3×2 grid</div>
+        <div class="ann-rule"><b>5 named cards</b> + "+8 more" overflow card</div>
+        <div class="ann-rule"><b>Card:</b> photo + name + seat count</div>
+        <div class="ann-muted">Each card links to individual location page</div>
+      </div>
+    </div>
   </div>
 
   <!-- WORKSPACE TYPES -->
@@ -251,6 +289,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="wf-card"><div class="wf-card-img"><div class="wf-card-img-label">Managed office</div></div><div class="wf-card-body"><div class="wf-card-title">Managed office</div><div class="wf-card-sub">20&ndash;2,000 people &middot; Customised</div><div class="wf-card-cta">Explore &rarr;</div></div></div>
       <div class="wf-card"><div class="wf-card-img"><div class="wf-card-img-label">Dedicated desk</div></div><div class="wf-card-body"><div class="wf-card-title">Dedicated desk</div><div class="wf-card-sub">1&ndash;10 people &middot; Monthly</div><div class="wf-card-cta">Explore &rarr;</div></div></div>
       <div class="wf-card"><div class="wf-card-img"><div class="wf-card-img-label">Day pass</div></div><div class="wf-card-body"><div class="wf-card-title">Day pass</div><div class="wf-card-sub">On-demand &middot; Pay per use</div><div class="wf-card-cta">Explore &rarr;</div></div></div>
+    </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Workspace Types</div>
+        <div class="ann-rule"><b>4 cards:</b> Private, Managed, Dedicated, Day Pass</div>
+        <div class="ann-rule"><b>"Explore →"</b> links to product-specific landing page</div>
+        <div class="ann-muted">Order reflects conversion priority (private → managed → desk → day pass)</div>
+      </div>
     </div>
   </div>
 
@@ -287,6 +334,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <div class="wf-acc-item"><div class="wf-acc-row"><div class="wf-acc-label">Active event infrastructure</div><div class="wf-acc-icon">+</div></div></div>
       </div>
     </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Why CoKarma</div>
+        <div class="ann-rule"><b>Left:</b> Image carousel — 5 slides, auto-advances every 4s</div>
+        <div class="ann-rule"><b>Right:</b> Accordion — first item open by default</div>
+        <div class="ann-muted">Carousel images show real space photos per location</div>
+      </div>
+    </div>
   </div>
 
   <!-- AMENITIES -->
@@ -307,6 +363,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       </div>
     </div>
     <div class="wf-note">Scrolling marquee · 12 cards · auto-scrolls · pauses on hover · faded edges · icon placeholders</div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Amenities</div>
+        <div class="ann-rule"><b>12 cards</b> in infinite scroll marquee</div>
+        <div class="ann-rule"><b>Pauses</b> on hover</div>
+        <div class="ann-rule"><b>Faded edges</b> (gradient mask left + right)</div>
+        <div class="ann-muted">Icon placeholders → replace with final icons in branded version</div>
+      </div>
+    </div>
   </div>
 
   <!-- STATS BAR -->
@@ -319,6 +385,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="stat-item"><div class="stat-n">700+</div><div class="stat-l">Companies</div></div>
       <div class="stat-div"></div>
       <div class="stat-item"><div class="stat-n">20,000+</div><div class="stat-l">Member network</div></div>
+    </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Stats Bar</div>
+        <div class="ann-rule"><b>4 stats:</b> Locations · Seats · Companies · Members</div>
+        <div class="ann-rule"><b>Dark bg</b> for visual contrast break</div>
+        <div class="ann-muted">Numbers can animate count-up on scroll entry</div>
+      </div>
     </div>
   </div>
 
@@ -338,6 +413,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="wf-logo-item">PhonePe</div>
     </div>
     <div class="wf-note">Auto-scrolling marquee &middot; pauses on hover &middot; fade edges</div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Trusted By</div>
+        <div class="ann-rule"><b>Auto-scrolling</b> logo marquee</div>
+        <div class="ann-rule"><b>Pauses</b> on hover</div>
+        <div class="ann-muted">Placeholder boxes → replace with real SVG logos in branded version</div>
+      </div>
+    </div>
   </div>
 
   <!-- EVENTS -->
@@ -357,6 +441,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="wf-evt-cta">Register free &rarr;</div>
     </div>
     <div class="wf-note">Dark card · badge left · CTA button right · can expand to multiple event cards</div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Events</div>
+        <div class="ann-rule"><b>Featured event</b> card (dark bg)</div>
+        <div class="ann-rule"><b>Left:</b> Badge + title + date/location</div>
+        <div class="ann-rule"><b>Right:</b> "Register free →" CTA</div>
+        <div class="ann-muted">Can stack multiple event cards vertically as events grow</div>
+      </div>
+    </div>
   </div>
 
   <!-- TESTIMONIALS -->
@@ -382,6 +476,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <div class="wf-tcard-foot"><div class="wf-avatar">AM</div><div><div class="wf-name">Arun M.</div><div class="wf-meta">VP Operations &middot; Fin. District &middot; 200 seats</div></div></div>
       </div>
     </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Testimonials</div>
+        <div class="ann-rule"><b>3 cards</b> representing: founder (growth), startup (network), GCC (enterprise)</div>
+        <div class="ann-rule"><b>Each:</b> stars · quote · avatar + name + role</div>
+        <div class="ann-muted">Profiles chosen to reflect breadth of customer types</div>
+      </div>
+    </div>
   </div>
 
   <!-- BLOGS -->
@@ -395,6 +498,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="wf-blog-card"><div class="wf-blog-img"><div class="wf-blog-tag">GCC</div></div><div class="wf-blog-body"><div class="wf-blog-title">Where MNCs are setting up new GCCs in Hyderabad</div><div class="wf-blog-meta">Feb 19, 2026 &middot; 4 min read</div></div></div>
       <div class="wf-blog-card"><div class="wf-blog-img"><div class="wf-blog-tag">Workspace</div></div><div class="wf-blog-body"><div class="wf-blog-title">Why coworking spaces should foster physical fitness</div><div class="wf-blog-meta">Feb 10, 2026 &middot; 3 min read</div></div></div>
       <div class="wf-blog-card"><div class="wf-blog-img"><div class="wf-blog-tag">Event</div></div><div class="wf-blog-body"><div class="wf-blog-title">eChai Demo Day: ideas meet honest conversations</div><div class="wf-blog-meta">Mar 6, 2026 &middot; Event recap</div></div></div>
+    </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Resources / Blog</div>
+        <div class="ann-rule"><b>3 latest posts</b> with tag, title, date</div>
+        <div class="ann-rule"><b>"View all →"</b> header link to blog index</div>
+        <div class="ann-muted">Tags: GCC, Workspace, Events — reflect content pillars</div>
+      </div>
     </div>
   </div>
 
@@ -416,6 +528,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <div class="wf-hint">Or call us: +91 99890 16041 &middot; Available 9am&ndash;7pm</div>
       </div>
     </div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Contact</div>
+        <div class="ann-rule"><b>Left panel:</b> headline + phone number (dark)</div>
+        <div class="ann-rule"><b>Right form:</b> toggle "For myself / For my team"</div>
+        <div class="ann-rule"><b>Fields:</b> Name · Phone · Location · Type → Callback CTA</div>
+        <div class="ann-muted">Phone visible without form submission — lower barrier</div>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -423,6 +545,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="wf-foot-logo">CoKarma</div>
     <div class="wf-foot-links"><span>Locations</span><span>Workspaces</span><span>Events</span><span>Blogs</span><span>About</span><span>Contact</span></div>
     <div class="wf-foot-copy">&copy; 2026 CoKarma &middot; Hyderabad</div>
+    <div class="ann">
+      <div class="ann-arrow">←</div>
+      <div class="ann-box">
+        <div class="ann-title">Footer</div>
+        <div class="ann-rule"><b>Left:</b> Logo</div>
+        <div class="ann-rule"><b>Centre:</b> 6 nav links</div>
+        <div class="ann-rule"><b>Right:</b> Copyright</div>
+        <div class="ann-muted">Minimal footer — no newsletter or social links in this layout</div>
+      </div>
+    </div>
   </div>
 
 </div>
