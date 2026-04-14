@@ -32,16 +32,22 @@
 .hero-h{font-family:'Montserrat',sans-serif;font-size:68px;font-weight:800;color:#111;line-height:1.05;letter-spacing:-2.5px;margin-bottom:22px;}
 .hero-h em{color:#C90404;font-style:normal;}
 .hero-sub{font-size:17px;color:#555;line-height:1.75;margin-bottom:38px;max-width:600px;font-weight:400;}
-.hero-ctas{display:flex;align-items:center;gap:24px;margin-bottom:56px;}
+.hero-ctas{display:flex;align-items:center;gap:24px;}
 .hero-btn-p{background:#C90404;color:#fff;font-size:15px;font-weight:600;padding:15px 34px;border:none;border-radius:7px;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:0.2px;}
 .hero-btn-s{background:transparent;color:#C90404;font-size:14px;font-weight:600;padding:0;border:none;cursor:pointer;font-family:'Poppins',sans-serif;text-decoration:underline;text-underline-offset:3px;}
-.hero-micro{display:flex;border-top:1px solid rgba(201,4,4,0.15);background:#fff;}
-.mc{flex:1;padding:15px 22px;border-right:1px solid #ebebeb;cursor:pointer;}
-.mc:last-child{border-right:none;}
-.mc:hover{background:#FEFAF7;}
-.mc-t{font-size:12px;font-weight:700;color:#111;margin-bottom:2px;}
-.mc-s{font-size:11px;color:#888;}
-.mc-a{color:#C90404;font-size:11px;margin-left:3px;}
+
+/* QUICK BOOK */
+.qbook{background:#fff;border-bottom:1px solid #ebebeb;padding:20px 52px;}
+.qbook-inner{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid #ebebeb;border-radius:10px;padding:14px 20px;}
+.qbook-field{flex:1;display:flex;flex-direction:column;gap:3px;border-right:1px solid #ebebeb;padding-right:20px;}
+.qbook-field:last-of-type{border-right:none;}
+.qbook-label{font-size:9px;font-weight:700;color:#C90404;letter-spacing:1px;text-transform:uppercase;}
+.qbook-input{font-family:'Poppins',sans-serif;font-size:13px;border:none;outline:none;color:#111;background:transparent;width:100%;}
+.qbook-input::placeholder{color:#bbb;}
+.qbook-select{font-family:'Poppins',sans-serif;font-size:13px;border:none;outline:none;color:#111;background:transparent;width:100%;-webkit-appearance:none;cursor:pointer;}
+.qbook-btn{background:#fff;border:1.5px solid #C90404;border-radius:7px;padding:12px 22px;font-size:12px;font-weight:700;color:#C90404;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;display:flex;align-items:center;gap:8px;transition:background 0.2s,color 0.2s;}
+.qbook-btn:hover{background:#C90404;color:#fff;}
+.qbook-btn svg{width:14px;height:14px;}
 
 /* SECTIONS */
 .sec{padding:88px 52px;}
@@ -50,39 +56,6 @@
 .eyebrow{font-size:10px;font-weight:700;color:#C90404;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
 .sec-h{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:800;color:#111;letter-spacing:-1px;margin-bottom:12px;line-height:1.15;}
 .sec-sub{font-size:14px;color:#666;margin-bottom:40px;line-height:1.65;font-weight:400;}
-
-/* WORKSPACE CARDS */
-.ws-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.ws-card{border:1px solid #ebebeb;border-radius:10px;overflow:hidden;background:#fff;transition:border-color 0.2s;}
-.ws-card:hover{border-color:#F5C4C4;}
-.ws-img{height:220px;display:flex;align-items:flex-end;padding:14px;position:relative;}
-.wi-1{background:#F5EAEA;}
-.wi-2{background:#EAEAf5;}
-.wi-3{background:#EAF5EA;}
-.wi-4{background:#F5F0EA;}
-.ws-img-icon{font-size:28px;position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);opacity:0.25;}
-.ws-lbl{font-size:9px;font-weight:700;color:#aaa;letter-spacing:1px;text-transform:uppercase;}
-.ws-body{padding:14px 16px;}
-.ws-t{font-size:13px;font-weight:700;color:#111;margin-bottom:3px;font-family:'Montserrat',sans-serif;}
-.ws-c{font-size:11px;color:#888;margin-bottom:13px;}
-.ws-cta{font-size:11px;font-weight:700;color:#C90404;display:flex;align-items:center;gap:4px;}
-
-/* WHY */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
-.why-img{height:360px;border-radius:10px;background:#111;display:flex;align-items:flex-end;padding:20px;position:relative;overflow:hidden;}
-.why-img-red{position:absolute;bottom:0;left:0;right:0;height:50%;background:#C90404;opacity:0.12;}
-.why-img-swirl{position:absolute;top:20px;right:20px;width:80px;height:80px;border-radius:50%;border:2px solid rgba(201,4,4,0.4);}
-.why-img-swirl2{position:absolute;top:30px;right:30px;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(201,4,4,0.25);}
-.why-img-tag{background:#C90404;border-radius:5px;padding:6px 12px;font-size:10px;font-weight:600;color:#fff;position:relative;z-index:1;}
-.acc-item{border-bottom:1px solid #ebebeb;padding:14px 0;cursor:pointer;}
-.acc-item:first-of-type{border-top:1px solid #ebebeb;}
-.acc-hdr{display:flex;justify-content:space-between;align-items:center;}
-.acc-t{font-size:13px;font-weight:600;color:#111;}
-.acc-icon{font-size:18px;color:#ccc;line-height:1;transition:transform 0.2s,color 0.2s;}
-.acc-body{font-size:12px;color:#666;margin-top:8px;line-height:1.7;display:none;}
-.acc-open .acc-body{display:block;}
-.acc-open .acc-icon{transform:rotate(45deg);color:#C90404;}
-.acc-open .acc-t{color:#C90404;}
 
 /* LOCATIONS */
 .loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
@@ -100,6 +73,58 @@
 .loc-body{padding:10px 14px;}
 .loc-name{font-size:12px;font-weight:700;color:#111;margin-bottom:2px;font-family:'Montserrat',sans-serif;}
 .loc-seats{font-size:10px;color:#888;}
+
+/* WORKSPACE CARDS */
+.ws-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.ws-card{border:1px solid #ebebeb;border-radius:10px;overflow:hidden;background:#fff;transition:border-color 0.2s;}
+.ws-card:hover{border-color:#F5C4C4;}
+.ws-img{height:220px;display:flex;align-items:flex-end;padding:14px;position:relative;}
+.wi-1{background:#F5EAEA;}
+.wi-2{background:#EAEAf5;}
+.wi-3{background:#EAF5EA;}
+.wi-4{background:#F5F0EA;}
+.ws-img-icon{font-size:28px;position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);opacity:0.25;}
+.ws-lbl{font-size:9px;font-weight:700;color:#aaa;letter-spacing:1px;text-transform:uppercase;}
+.ws-body{padding:14px 16px;}
+.ws-t{font-size:13px;font-weight:700;color:#111;margin-bottom:3px;font-family:'Montserrat',sans-serif;}
+.ws-c{font-size:11px;color:#888;margin-bottom:13px;}
+.ws-cta{font-size:11px;font-weight:700;color:#C90404;display:flex;align-items:center;gap:4px;}
+
+/* WHY — CAROUSEL */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.carousel{position:relative;height:360px;border-radius:10px;overflow:hidden;}
+.carousel-slides{display:flex;height:100%;transition:transform 0.4s ease;}
+.carousel-slide{min-width:100%;height:100%;display:flex;align-items:flex-end;padding:20px;position:relative;}
+.cs-1{background:linear-gradient(135deg,#1a1a2e,#16213e);}
+.cs-2{background:linear-gradient(135deg,#0f3460,#533483);}
+.cs-3{background:linear-gradient(135deg,#111,#2d2d2d);}
+.cs-4{background:linear-gradient(135deg,#1b4332,#2d6a4f);}
+.cs-5{background:linear-gradient(135deg,#370617,#6a040f);}
+.carousel-tag{background:#C90404;border-radius:5px;padding:6px 12px;font-size:10px;font-weight:600;color:#fff;position:relative;z-index:1;}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:background 0.2s;}
+.carousel-btn:hover{background:rgba(255,255,255,0.3);}
+.carousel-prev{left:12px;}
+.carousel-next{right:12px;}
+.carousel-dots{position:absolute;bottom:14px;right:14px;display:flex;gap:6px;z-index:2;}
+.cdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:background 0.2s;}
+.cdot.active{background:#fff;}
+.acc-item{border-bottom:1px solid #ebebeb;padding:14px 0;cursor:pointer;}
+.acc-item:first-of-type{border-top:1px solid #ebebeb;}
+.acc-hdr{display:flex;justify-content:space-between;align-items:center;}
+.acc-t{font-size:13px;font-weight:600;color:#111;}
+.acc-icon{font-size:18px;color:#ccc;line-height:1;transition:transform 0.2s,color 0.2s;}
+.acc-body{font-size:12px;color:#666;margin-top:8px;line-height:1.7;display:none;}
+.acc-open .acc-body{display:block;}
+.acc-open .acc-icon{transform:rotate(45deg);color:#C90404;}
+.acc-open .acc-t{color:#C90404;}
+
+/* AMENITIES */
+.am-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.am-card{border:1px solid #ebebeb;border-radius:12px;padding:28px 24px;background:#fff;transition:border-color 0.2s,box-shadow 0.2s;}
+.am-card:hover{border-color:#F5C4C4;box-shadow:0 4px 20px rgba(201,4,4,0.06);}
+.am-icon{width:48px;height:48px;margin-bottom:16px;color:#C90404;}
+.am-t{font-size:13px;font-weight:700;color:#111;margin-bottom:5px;font-family:'Montserrat',sans-serif;}
+.am-s{font-size:12px;color:#888;line-height:1.6;}
 
 /* STATS */
 .stats-bar{background:#C90404;padding:56px 52px;}
@@ -122,12 +147,15 @@
 .logo-item{height:48px;min-width:120px;border:1px solid #ebebeb;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 20px;background:#fafafa;flex-shrink:0;}
 .logo-item svg{height:22px;width:auto;}
 
-/* NETWORK */
-.net-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:52px;}
-.net-num{font-family:'Montserrat',sans-serif;font-size:80px;font-weight:800;color:#111;line-height:1;letter-spacing:-4px;}
-.net-num b{color:#C90404;font-size:42px;letter-spacing:0;}
-.net-sub{font-size:16px;color:#555;margin-top:12px;line-height:1.7;}
-.net-claim{font-size:15px;color:#666;line-height:1.8;text-align:left;max-width:380px;}
+/* EVENTS */
+.evt-card{background:#111;border-radius:14px;padding:40px 44px;display:flex;align-items:center;justify-content:space-between;}
+.evt-left{display:flex;align-items:center;gap:20px;}
+.evt-badge{background:#C90404;border-radius:4px;padding:5px 11px;font-size:9px;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+.evt-title{font-size:22px;font-weight:700;color:#fff;font-family:'Montserrat',sans-serif;margin-bottom:6px;}
+.evt-date{font-size:12px;color:rgba(255,255,255,0.5);}
+.evt-cta{font-size:13px;color:#fff;font-weight:700;cursor:pointer;background:#C90404;padding:13px 26px;border-radius:7px;white-space:nowrap;letter-spacing:0.2px;}
+
+/* TESTIMONIALS */
 .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .tcard{background:#fff;border:1px solid #ebebeb;border-radius:14px;padding:28px;}
 .tcard-top{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
@@ -137,12 +165,6 @@
 .avatar{width:36px;height:36px;border-radius:50%;background:#FBEAEA;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#8B0202;flex-shrink:0;font-family:'Montserrat',sans-serif;}
 .tcard-name{font-size:12px;font-weight:700;color:#111;}
 .tcard-meta{font-size:11px;color:#aaa;margin-top:2px;}
-.evt-strip{margin-top:48px;border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;background:#111;}
-.evt-left{display:flex;align-items:center;gap:14px;}
-.evt-badge{background:#C90404;border-radius:4px;padding:5px 11px;font-size:9px;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase;}
-.evt-title{font-size:18px;font-weight:700;color:#fff;margin-top:2px;font-family:'Montserrat',sans-serif;}
-.evt-date{font-size:12px;color:rgba(255,255,255,0.5);margin-top:3px;}
-.evt-cta{font-size:13px;color:#fff;font-weight:700;cursor:pointer;background:#C90404;padding:13px 26px;border-radius:7px;white-space:nowrap;letter-spacing:0.2px;}
 
 /* BLOGS */
 .blog-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
@@ -189,26 +211,22 @@
 
 <div class="w">
 
+<!-- NAV -->
 <nav class="nav">
   <div class="logo-wrap">
-    <div class="logo-mark">
-      <div class="logo-swirl"></div>
-      <div class="logo-swirl2"></div>
-    </div>
-    <div>
-      <div class="logo-text">CoKarma</div>
-      <span class="logo-tag">Coworking Space</span>
-    </div>
+    <div class="logo-mark"><div class="logo-swirl"></div><div class="logo-swirl2"></div></div>
+    <div><div class="logo-text">CoKarma</div><span class="logo-tag">Coworking Space</span></div>
   </div>
   <div class="nav-links">
     <span>Locations</span><span>Workspaces</span><span>Enterprise</span><span>Events</span><span>About</span>
   </div>
   <div class="nav-right">
     <button class="btn-o">Log in</button>
-    <button class="btn-s">Book a tour</button>
+    <button class="btn-s">Get in Touch</button>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-deco-circle"></div>
   <div class="hero-deco-circle2"></div>
@@ -224,7 +242,51 @@
   </div>
 </div>
 
+<!-- QUICK BOOK -->
+<div class="qbook">
+  <div class="qbook-inner">
+    <div class="qbook-field">
+      <div class="qbook-label">Name</div>
+      <input class="qbook-input" placeholder="Enter your name">
+    </div>
+    <div class="qbook-field">
+      <div class="qbook-label">Type of Booking</div>
+      <select class="qbook-select">
+        <option value="" disabled selected>Select your booking</option>
+        <option>Private Office</option>
+        <option>Managed Office</option>
+        <option>Dedicated Desk</option>
+        <option>Day Pass</option>
+      </select>
+    </div>
+    <div class="qbook-field">
+      <div class="qbook-label">Phone Number</div>
+      <input class="qbook-input" placeholder="Enter your phone number">
+    </div>
+    <button class="qbook-btn">
+      Request a Call Back
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- OUR LOCATIONS -->
 <div class="sec">
+  <div class="eyebrow">Our locations</div>
+  <div class="sec-h">We're in your neighbourhood</div>
+  <div class="sec-sub">13 centres across Hyderabad's key business corridors.</div>
+  <div class="loc-grid">
+    <div class="loc-card"><div class="loc-img li-1"></div><div class="loc-body"><div class="loc-name">Kokapet</div><div class="loc-seats">535 seats &middot; New campus</div></div></div>
+    <div class="loc-card"><div class="loc-img li-2"></div><div class="loc-body"><div class="loc-name">HITEC City</div><div class="loc-seats">480 seats &middot; Tech hub</div></div></div>
+    <div class="loc-card"><div class="loc-img li-3"></div><div class="loc-body"><div class="loc-name">Financial District</div><div class="loc-seats">350 seats &middot; GCC belt</div></div></div>
+    <div class="loc-card"><div class="loc-img li-4"></div><div class="loc-body"><div class="loc-name">Jubilee Hills</div><div class="loc-seats">280 seats &middot; Central</div></div></div>
+    <div class="loc-card"><div class="loc-img li-5"></div><div class="loc-body"><div class="loc-name">Kondapur</div><div class="loc-seats">320 seats &middot; Metro access</div></div></div>
+    <div class="loc-card"><div class="loc-img li-more"><div class="li-more-n">+8</div><div class="li-more-s">more locations</div></div><div class="loc-body"><div class="loc-name" style="color:#C90404;">See all 13 &rarr;</div><div class="loc-seats">Begumpet, Madhapur &amp; more</div></div></div>
+  </div>
+</div>
+
+<!-- WORKSPACE TYPES -->
+<div class="sec-alt">
   <div class="eyebrow">What are you looking for</div>
   <div class="sec-h">A workspace built for you</div>
   <div class="sec-sub">Move-in ready or fully customised &mdash; the right setup for every team size.</div>
@@ -248,13 +310,28 @@
   </div>
 </div>
 
-<div class="sec-alt">
+<!-- WHY COKARMA -->
+<div class="sec">
   <div class="why-grid">
-    <div class="why-img">
-      <div class="why-img-red"></div>
-      <div class="why-img-swirl"></div>
-      <div class="why-img-swirl2"></div>
-      <div class="why-img-tag">Kokapet &middot; Financial District &middot; HITEC City</div>
+    <div>
+      <div class="carousel" id="carousel">
+        <div class="carousel-slides" id="slides">
+          <div class="carousel-slide cs-1"><div class="carousel-tag">Kokapet &middot; New Campus</div></div>
+          <div class="carousel-slide cs-2"><div class="carousel-tag">HITEC City &middot; Tech Hub</div></div>
+          <div class="carousel-slide cs-3"><div class="carousel-tag">Financial District &middot; GCC Belt</div></div>
+          <div class="carousel-slide cs-4"><div class="carousel-tag">Jubilee Hills &middot; Central</div></div>
+          <div class="carousel-slide cs-5"><div class="carousel-tag">Kondapur &middot; Metro Access</div></div>
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="slide(-1)">&#8592;</button>
+        <button class="carousel-btn carousel-next" onclick="slide(1)">&#8594;</button>
+        <div class="carousel-dots" id="dots">
+          <div class="cdot active" onclick="goTo(0)"></div>
+          <div class="cdot" onclick="goTo(1)"></div>
+          <div class="cdot" onclick="goTo(2)"></div>
+          <div class="cdot" onclick="goTo(3)"></div>
+          <div class="cdot" onclick="goTo(4)"></div>
+        </div>
+      </div>
     </div>
     <div>
       <div class="eyebrow">Why CoKarma</div>
@@ -281,20 +358,76 @@
   </div>
 </div>
 
-<div class="sec">
-  <div class="eyebrow">Our locations</div>
-  <div class="sec-h">We're in your neighbourhood</div>
-  <div class="sec-sub">13 centres across Hyderabad's key business corridors.</div>
-  <div class="loc-grid">
-    <div class="loc-card"><div class="loc-img li-1"></div><div class="loc-body"><div class="loc-name">Kokapet</div><div class="loc-seats">535 seats &middot; New campus</div></div></div>
-    <div class="loc-card"><div class="loc-img li-2"></div><div class="loc-body"><div class="loc-name">HITEC City</div><div class="loc-seats">480 seats &middot; Tech hub</div></div></div>
-    <div class="loc-card"><div class="loc-img li-3"></div><div class="loc-body"><div class="loc-name">Financial District</div><div class="loc-seats">350 seats &middot; GCC belt</div></div></div>
-    <div class="loc-card"><div class="loc-img li-4"></div><div class="loc-body"><div class="loc-name">Jubilee Hills</div><div class="loc-seats">280 seats &middot; Central</div></div></div>
-    <div class="loc-card"><div class="loc-img li-5"></div><div class="loc-body"><div class="loc-name">Kondapur</div><div class="loc-seats">320 seats &middot; Metro access</div></div></div>
-    <div class="loc-card"><div class="loc-img li-more"><div class="li-more-n">+8</div><div class="li-more-s">more locations</div></div><div class="loc-body"><div class="loc-name" style="color:#C90404;">See all 13 &rarr;</div><div class="loc-seats">Begumpet, Madhapur &amp; more</div></div></div>
+<!-- AMENITIES -->
+<div class="sec-alt">
+  <div class="eyebrow">What's included</div>
+  <div class="sec-h">Everything you need, built in.</div>
+  <div class="sec-sub">Every CoKarma space comes fully equipped from day one.</div>
+  <div class="am-grid">
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 16c5-6 11-9 19-9s14 3 19 9"/><path d="M11 22c4-5 8-7 13-7s9 2 13 7"/><path d="M17 28c2-3 4-4 7-4s5 1 7 4"/><circle cx="24" cy="36" r="2" fill="currentColor"/></svg>
+      <div class="am-t">High Speed Internet</div>
+      <div class="am-s">Free Seamless Connectivity, Rapid Speeds</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="24" cy="24" r="18"/><polyline points="24,12 24,24 32,28"/><text x="8" y="44" font-size="7" fill="currentColor" stroke="none" font-family="sans-serif" font-weight="700">24</text></svg>
+      <div class="am-t">24x7 Access</div>
+      <div class="am-s">Uninterrupted Availability Around The Clock</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 6v6M24 36v6M6 24h6M36 24h6"/><circle cx="24" cy="24" r="10"/><path d="M20 14l4 10 4-4"/></svg>
+      <div class="am-t">Power Back-Up</div>
+      <div class="am-s">Reliable Power, Uninterrupted Operations</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="14" width="32" height="24" rx="2"/><path d="M16 14v-4a8 8 0 0116 0v4"/><circle cx="24" cy="26" r="3"/></svg>
+      <div class="am-t">Modern Design</div>
+      <div class="am-s">Sleek Aesthetics, Contemporary Elegance</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="18" width="40" height="18" rx="3"/><path d="M10 18V14a4 4 0 018 0v4M30 18V14a4 4 0 018 0v4"/><path d="M14 26h4M30 26h4"/></svg>
+      <div class="am-t">Accessible Commute</div>
+      <div class="am-s">Footsteps Away From Metro Stations And Bus Stops</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 8h32v24H8z"/><circle cx="24" cy="20" r="6"/><path d="M8 32l8-6 8 6 8-6 8 6"/></svg>
+      <div class="am-t">24x7 Surveillance</div>
+      <div class="am-s">Maximum Safety And Protection</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M14 38v4M34 38v4"/><circle cx="16" cy="24" r="4"/><circle cx="32" cy="24" r="4"/></svg>
+      <div class="am-t">Conference Rooms</div>
+      <div class="am-s">Where Ideas Take Flight</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 40c0-8 4-16 12-20 8 4 12 12 12 20"/><path d="M24 20V10"/><path d="M18 14l6-4 6 4"/><path d="M16 40h16"/></svg>
+      <div class="am-t">Housekeeping</div>
+      <div class="am-s">Impeccable Care, Seamless Comfort</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 30c0-6 4-10 10-10h12c6 0 10 4 10 10v2H8v-2z"/><path d="M6 32h36v4H6z"/><path d="M18 20v-6a6 6 0 0112 0v6"/></svg>
+      <div class="am-t">Lounge Area</div>
+      <div class="am-s">Casual Spaces For Relaxation And Informal Meetings</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="32" height="32" rx="2"/><path d="M16 8v32M8 16h10M8 24h10M8 32h10"/><path d="M28 20l6 4-6 4z" fill="currentColor" stroke="none"/></svg>
+      <div class="am-t">Events</div>
+      <div class="am-s">Innovative Ventures And Vibrant Networking</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M16 10V6M32 10V6"/><path d="M8 20h32"/><path d="M16 28h16M16 34h10"/></svg>
+      <div class="am-t">Printing</div>
+      <div class="am-s">Efficient Printing Solutions Are Available</div>
+    </div>
+    <div class="am-card">
+      <svg class="am-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="14" width="40" height="24" rx="2"/><circle cx="24" cy="26" r="7"/><path d="M24 10v4M18 10h12"/></svg>
+      <div class="am-t">Projector</div>
+      <div class="am-s">High-Definition Projectors For Seamless Presentations</div>
+    </div>
   </div>
 </div>
 
+<!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item"><div class="stat-n">13+</div><div class="stat-l">Locations</div></div>
@@ -307,31 +440,28 @@
   </div>
 </div>
 
+<!-- TRUSTED BY -->
 <div class="trusted">
   <div class="trusted-lbl">Trusted by 700+ companies</div>
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <!-- Set 1 -->
       <div class="logo-item"><svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="800" font-size="16" fill="#1A1F6C">in</text><text x="20" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="16" fill="#1A1F6C">diGo</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="3" width="18" height="18" rx="3" fill="#FF5A1F"/><text x="2" y="17" font-family="Montserrat,sans-serif" font-weight="800" font-size="13" fill="#fff">u</text><text x="22" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="15" fill="#FF5A1F">pGrad</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="800" font-size="15" fill="#00287A">HYUNDAI</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 68 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="12" r="10" fill="#E23744"/><text x="6" y="16" font-family="Montserrat,sans-serif" font-weight="800" font-size="11" fill="#fff">Z</text><text x="24" y="17" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#E23744">omato</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 92 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="8" r="5" fill="#25C16F"/><circle cx="18" cy="8" r="5" fill="#25C16F" opacity=".6"/><circle cx="14" cy="15" r="5" fill="#25C16F" opacity=".8"/><text x="28" y="17" font-family="Montserrat,sans-serif" font-weight="700" font-size="13" fill="#1A1A1A">freshworks</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 76 24" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="4,20 12,4 20,20" fill="#2B6BE6"/><text x="26" y="17" font-family="Montserrat,sans-serif" font-weight="700" font-size="13" fill="#2B6BE6">Razorpay</text></svg></div>
-      <div class="logo-item"><svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="800" font-size="15" fill="#111">Fab</text><text x="34" y="18" font-family="Montserrat,sans-serif" font-weight="400" font-size="15" fill="#888">.com</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#111">Myntra</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#E37400">Swiggy</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#0A66C2">LinkedIn</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="800" font-size="14" fill="#F7220E">Zepto</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#6B21A8">PhonePe</text></svg></div>
-      <!-- Set 2 (duplicate for infinite scroll) -->
       <div class="logo-item"><svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="800" font-size="16" fill="#1A1F6C">in</text><text x="20" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="16" fill="#1A1F6C">diGo</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="3" width="18" height="18" rx="3" fill="#FF5A1F"/><text x="2" y="17" font-family="Montserrat,sans-serif" font-weight="800" font-size="13" fill="#fff">u</text><text x="22" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="15" fill="#FF5A1F">pGrad</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="800" font-size="15" fill="#00287A">HYUNDAI</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 68 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="12" r="10" fill="#E23744"/><text x="6" y="16" font-family="Montserrat,sans-serif" font-weight="800" font-size="11" fill="#fff">Z</text><text x="24" y="17" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#E23744">omato</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 92 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="8" r="5" fill="#25C16F"/><circle cx="18" cy="8" r="5" fill="#25C16F" opacity=".6"/><circle cx="14" cy="15" r="5" fill="#25C16F" opacity=".8"/><text x="28" y="17" font-family="Montserrat,sans-serif" font-weight="700" font-size="13" fill="#1A1A1A">freshworks</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 76 24" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="4,20 12,4 20,20" fill="#2B6BE6"/><text x="26" y="17" font-family="Montserrat,sans-serif" font-weight="700" font-size="13" fill="#2B6BE6">Razorpay</text></svg></div>
-      <div class="logo-item"><svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="800" font-size="15" fill="#111">Fab</text><text x="34" y="18" font-family="Montserrat,sans-serif" font-weight="400" font-size="15" fill="#888">.com</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#111">Myntra</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#E37400">Swiggy</text></svg></div>
       <div class="logo-item"><svg viewBox="0 0 52 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#0A66C2">LinkedIn</text></svg></div>
@@ -341,15 +471,28 @@
   </div>
 </div>
 
-<div class="sec-cream">
-  <div class="net-top">
-    <div>
-      <div class="eyebrow">The CoKarma network</div>
-      <div class="net-num">20,000<b>+</b></div>
-      <div class="net-sub">Your next hire, investor<br>or client is already here.</div>
+<!-- EVENTS -->
+<div class="sec">
+  <div class="eyebrow">Events</div>
+  <div class="sec-h">Where the community gathers.</div>
+  <div class="sec-sub">Demo days, GCC briefings, startup meetups &mdash; hosted monthly across all 13 locations.</div>
+  <div class="evt-card">
+    <div class="evt-left">
+      <div class="evt-badge">Upcoming</div>
+      <div>
+        <div class="evt-title">eChai &times; CoKarma &mdash; Startup Demo Day</div>
+        <div class="evt-date">Apr 18, 2026 &middot; Kokapet</div>
+      </div>
     </div>
-    <div class="net-claim">A community of founders, operators and enterprise teams &mdash; all working from the same 13 locations.</div>
+    <div class="evt-cta">Register free &rarr;</div>
   </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="sec-cream">
+  <div class="eyebrow">The CoKarma network</div>
+  <div class="sec-h">20,000+ members strong.</div>
+  <div class="sec-sub">Your next hire, investor or client is already here &mdash; all working from the same 13 locations.</div>
   <div class="tcards">
     <div class="tcard">
       <div class="tcard-top"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
@@ -367,15 +510,9 @@
       <div class="tcard-foot"><div class="avatar">AM</div><div><div class="tcard-name">Arun M.</div><div class="tcard-meta">VP Operations &middot; Fin. District &middot; 200 seats</div></div></div>
     </div>
   </div>
-  <div class="evt-strip">
-    <div class="evt-left">
-      <div class="evt-badge">Upcoming</div>
-      <div><div class="evt-title">eChai &times; CoKarma &mdash; Startup Demo Day</div><div class="evt-date">Apr 18, 2026 &middot; Kokapet</div></div>
-    </div>
-    <div class="evt-cta">Register free &rarr;</div>
-  </div>
 </div>
 
+<!-- BLOGS -->
 <div class="sec">
   <div class="blog-hdr">
     <div><div class="eyebrow">Resources</div><div class="sec-h">From the CoKarma desk</div></div>
@@ -397,6 +534,7 @@
   </div>
 </div>
 
+<!-- CONTACT -->
 <div class="sec-alt">
   <div class="contact-grid">
     <div class="contact-img">
@@ -423,6 +561,7 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <div class="footer">
   <div class="foot-logo">CoKarma</div>
   <div class="foot-links"><span>Locations</span><span>Workspaces</span><span>Events</span><span>Blogs</span><span>About</span><span>Contact</span></div>
@@ -433,4 +572,8 @@
 <script>
 function ta(el){document.querySelectorAll('.acc-item').forEach(i=>i.classList.remove('acc-open'));el.classList.add('acc-open');}
 function st(el){document.querySelectorAll('.tog').forEach(o=>o.classList.remove('on'));el.classList.add('on');}
+let cur=0;const total=5;
+function goTo(n){cur=n;document.getElementById('slides').style.transform=`translateX(-${cur*100}%)`;document.querySelectorAll('.cdot').forEach((d,i)=>d.classList.toggle('active',i===cur));}
+function slide(dir){goTo((cur+dir+total)%total);}
+setInterval(()=>slide(1),4000);
 </script>
